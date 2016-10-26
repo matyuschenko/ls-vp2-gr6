@@ -1,0 +1,48 @@
+.modal-window
+    .modal-container
+
+        .modal__header
+            h4.modal__title Редактировать профиль
+            a(href="#").modal-button.close
+        form.form.form__edit-user
+            .input-group
+                label Имя
+                input.input(placeholder="Имя")
+                input.input(placeholder="Фамилия")
+
+            .input-group
+                label О себе
+                input.input.input-text(placeholder="О себе")
+
+            .input-group.input-group_upload
+                .image-preview
+                    img(src="#" alt="").image-preview_pic
+                label.file-label.button.button_transparent Загрузить фотографию
+                small.form__notice (файл должен быть размером не более 512 КБ)
+
+            .input-group.input-group_upload
+                .image-preview
+                    img(src="#" alt="").image-preview_pic
+                label.file-label.button.button_transparent Загрузить фон
+                small.form__notice (файл должен быть размером не более 1024 КБ)
+
+            .input-group
+                label Вконтакте
+                input.input.input-text(placeholder="О себе")
+            .input-group
+                label Facebook
+                input.input.input-text(placeholder="О себе")
+            .input-group
+                label E-mail
+                input.input.input-text(placeholder="О себе")
+            .input-group
+                label Twitter
+                input.input.input-text(placeholder="О себе")
+
+
+            .form_add-photo-buttons
+                a(href="#").button.button_ok Сохранить
+                a(href="#").button.button_link-close Отменить
+
+
+

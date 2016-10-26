@@ -30,6 +30,8 @@ Thumbs.db
 .hg
 .idea
 .svn
+build
+bower_components
 
 # Node.JS
 node_modules
