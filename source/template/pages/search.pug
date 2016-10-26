@@ -4,4 +4,30 @@ block variables
     - var title = 'Поиск'
 
 block content
-    include ../common/_header
+    header.header
+        h1.header__search-title Исследуй мир
+        a(href="index.html").btn.btn_animated.btn__logut
+            span На главную
+    .search__holder
+        .search__column
+            .search_user-info
+                .user-photo
+                    +avatar
+                .user-info
+                    h4.user-info__name Антон Черепов
+        .search__column
+            form.search-form
+                button(type="submit").search-form__button
+                input(type="text" placeholder="Исследовать мир").search-form__input
+        .search__column
+            a(href="#").show-new Показать новые
+    section.search__content
+        h2.search__result-title По запросу «Природа» найдено 6 результатов
+        .album-container
+
+
+    include common/_footer
+
+
+
+
