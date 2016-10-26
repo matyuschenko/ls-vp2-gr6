@@ -1,0 +1,20 @@
+header.header
+    .header__user-info
+        .user-photo
+            +avatar
+        .user-info
+            h4.user-info__name Антон Черепов
+            .user-info_desc Я веб-разработчик. Мне 24  года. Люблю путешествия, кодинг, фриланс и активный отдых.
+                +socialsBlock
+    .header__buttons
+        .header__buttons-item
+            a.button.button_animated.button_edit-info Редактировать
+         .header__buttons-item
+            a(href="#").button.button_animated.button_loguot Выйти
+    .search__holder
+        form.search-form
+            button(type="submit").search-form__button
+            input(type="text" placeholder="Исследовать мир").search-form__input
+
+
+

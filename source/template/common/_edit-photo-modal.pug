@@ -1,0 +1,27 @@
+.modal-window
+    .modal-container
+
+        .modal__header
+            h4.modal__title Редактировать фотографию
+            a.modal-button.close
+
+        form.form.form__edit-photo
+            .form_photo-edit
+                .input-group
+                    label Название
+                    input.input(type="text" placeholder="Название альбома")
+
+                .input-group
+                    label Описание
+                    input.input.input-text(type="text" placeholder="Описание альбома")
+
+            .form_photo-delete
+                p.modal-p Вы хотите удалить это фото?
+                a(href="#").button.button_red Да
+                a(href="#").button.button_link-close Отменить
+
+
+            .form_add-photo-buttons
+                a(href="#").button.button_ok Сохранить
+                a(href="#").button.button_link-close Отменить
+                a(href="#").button.button_red Удалить
