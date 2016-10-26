@@ -1,0 +1,17 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'common/fonts';
+@import 'common/buttons';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'pages/album';
+@import 'pages/main';
+@import 'pages/search';
+@import 'pages/welcome';
+
+* {
+	box-sizing: border-box;
+}
+ html {
+ 	font: 16px 'Proxima Nova';
+ }
