@@ -4,4 +4,41 @@ block variables
     - var title = 'Профиль'
 
 block content
-    include ../common/header
+    header.header
+        .header__user-info
+            .user-photo
+                +avatar
+            .user-info
+                h4.user-info__name Антон Черепов
+                .user-info_desc Я веб-разработчик. Мне 24  года. Люблю путешествия, кодинг, фриланс и активный отдых.
+                    +socialsBlock
+        .header__buttons
+            .header__buttons-item
+                a.btn.button_animated.button_edit-info
+                    span Редактировать
+            .header__buttons-item
+                a(href="#").btn.button_animated.button_loguot
+                    span Выйти
+        .search__holder
+            form.search-form
+                button(type="submit").search-form__button
+                input(type="text" placeholder="Исследовать мир").search-form__input
+
+
+    section.news-content
+        .new-photos-album
+            h2.album-title Новое в мире
+            .album-container
+            a(href="#").button.button_transparent Показать еще
+    section.my-album
+        .my-album__holder
+            h2.album-title Мои альбомы
+            a(href="#").btn.button_animated.button_add
+                span Добавить
+        .album-container
+
+
+
+
+
+
