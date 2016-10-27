@@ -69,11 +69,24 @@
 .welcome__links-wrapper {
 	padding: 0 15px;
 }
+.welcome_form-link-wrapper {
+	margin-bottom: 15px;
+}
+.welcome_form-text {
+	font-size: 14px;
+	line-height: 35px;
+}
 .welcome_form-link {
 	font-weight: 600;
 	font-size: 14px;
 	color: $btn-inc;
 	text-decoration: none;
+	&:hover {
+		color: $btn-inc-hover;
+	}
+}
+.welcome_form-span {
+	margin-right: 5px;
 }
 
 .flip-card__back-side,
