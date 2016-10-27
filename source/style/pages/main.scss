@@ -209,12 +209,17 @@ transition: opacity .5s;
 
 .changes{
   position: fixed;
+  display: none;
   left: 0;
   top: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(white, .9);
   z-index: 2;
+  transition: 1s all;
+  &-active{
+    display: block;
+  }
   &__top{
     min-height: 240px;
     width:100%;
@@ -305,4 +310,53 @@ transition: opacity .5s;
 .textarea{
   resize: none;
   height: 64px;
+}
+.photoTip{
+  width: 280px;
+  min-height: 111px;
+  background-color: white;
+  border-radius: 3px 2px 2px 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  padding: 11px 11px 11px 11px;
+  box-sizing: border-box;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  top: 0;
+  & .input{
+    width: 259px;
+    border: 1px solid #d8d6d6;
+  }
+  & .submit, & .cancel{
+    color: #28bbf0;
+    font-family: "Panton";
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 5px 20px;
+    box-sizing: border-box;
+    &:hover{
+      cursor: pointer;
+    }
+
+  }
+  & .submit{
+    border: 1px solid #28bbf0;
+    border-radius: 20px;
+  }
+  &:after{
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background-color: white;
+    top: -7px;
+    left: 50%;
+    margin-left: -7px;
+    position: absolute;
+    transform: rotate(45deg);
+  }
 }
