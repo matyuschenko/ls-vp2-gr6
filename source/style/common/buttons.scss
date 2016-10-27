@@ -1,0 +1,27 @@
+.btn {
+  white-space: nowrap;
+  position: relative;
+  cursor: pointer;
+  border-radius: 2.625rem;
+  height: 2.625rem;
+  line-height: 2.625rem;
+}
+
+.button_animated {
+  background: #fff;
+  float: right;
+  padding: 0 22px;
+  box-shadow: 0 1px 2px 0 rgba(0,0,0,.22);
+  overflow: hidden;
+  box-sizing: border-box;
+  text-decoration: none;
+  width: 42px;
+  .fa {
+    color: #a0a09f;
+    font-size: 22px;
+    position: absolute;
+    top: 50%;
+    left: 13px;
+    transform: translateY(-50%);
+  }
+}

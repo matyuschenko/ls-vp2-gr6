@@ -2,6 +2,7 @@
 @import 'helpers/mixins';
 @import 'common/fonts';
 @import 'common/buttons';
+@import 'common/socials';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'pages/album';
@@ -12,6 +13,12 @@
 * {
 	box-sizing: border-box;
 }
- html {
- 	font: 16px 'Proxima Nova';
- }
+  html {
+    font: 16px 'Proxima Nova';
+  }
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+}

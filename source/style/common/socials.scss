@@ -1,0 +1,25 @@
+.social-links {
+  margin: 22px 0 0 0;
+  padding: 0;
+  .social__item {
+    list-style-type: none;
+    display: inline-block;
+    margin-left: 5px;
+    &:first-child {
+      margin-left: 0;
+    }
+    .social__link {
+      .svg-social {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+        opacity: .5;
+        transition: all .15s linear;
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+}

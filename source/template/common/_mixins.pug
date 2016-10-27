@@ -11,3 +11,33 @@ mixin socialsBlock()
                 a(href=link_url, id= "" class="social__link" )
                     svg.svg-social
                         use(xlink:href="assets/img/sprite.svg#" + link_name)
+
+mixin albumItem(title, category, comments, likes, thumb, user_avatar)
+    .album-item
+        .album-item-holder
+            .album-photo
+                a.open-img-popup.js-open-slider(href="#")
+                    .album-mask
+                        i(class="fa fa-search-plus")
+                    .album-photo__thumb(style="background-image: url('assets/img/default_avatar.jpg')", alt="")
+            .album-desc
+                .album-desc__user
+                    .photo-user-img
+                        img(src="assets/img/" + user_avatar, alt="")
+                        a.photo-user-img__mask(href="user.html")
+                            svg.svg-more
+                                use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#more")
+                .album-desc__info
+                    .photo-desc-title= title
+                    .photo-info
+                        button.photo-info__item
+                            i(class="fa fa-commenting")
+                            span.comment-count= comments
+                        button.photo-info__item
+                            i(class="fa fa-heart")
+                            span.like-count= likes
+            .album-category
+                a.category-name(href="album.html")
+                    svg.svg-category
+                        use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#album")
+                    span= category
