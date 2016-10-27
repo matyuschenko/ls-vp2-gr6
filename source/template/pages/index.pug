@@ -13,33 +13,36 @@ block content
             h1.welcome_h1 Добро пожаловать
             .welcome_text
               p.welcome_text-p Перед вами сервис, который может вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
-          .welcome__card.welcome__intro_login
+          .welcome__card.welcome__card_login
             form.form.welcome_form
-              label
-                input
-                span
-              label
-                input
-                span
-            a(href="#").welcome_form-link Забыли пароль?
-            a.button.welcome_form-button Войти
-            .welcome_form-text
-              span.welcome_form-span Нет аккуанта?
-              a(href="#").welcome_form-link Зарегистрироваться
+              label.form__label
+                input.form__input(type="email" name="email" id="email" value="" placeholder="Электронная почта")
+                span.form__icon
+                  i(class="fa fa-envelope" aria-hidden="true")
+              label.form__label
+                input.form__input(type="password" name="password" id="password" value="" placeholder="Пароль")
+                span.form__icon
+                  i(class="fa fa-lock fa-lg" aria-hidden="true")
+            .welcome__links-wrapper
+              a(href="#").welcome_form-link Забыли пароль?
+              a.button.welcome_form-button Войти
+              .welcome_form-text
+                span.welcome_form-span Нет аккуанта?
+                a(href="#").welcome_form-link Зарегистрироваться
         .flip-card__back-side
           .welcome__intro.welcome__intro_registration
             h1.welcome_h1 Регистрация
           .welcome__card.welcome__card_registration
             form.form.welcome_form
               label.form__label
-                input
-                span
-              label
-                input
-                span
-              label
-                input
-                span
+                input.form__input
+                span.form__icon
+              label.form__label
+                input.form__input
+                span.form__icon
+              label.form__label
+                input.form__input
+                span.form__icon
               span Ваши данные остаются строго конфеденциальны
               a(href="#").button.welcome_form-button Создать аккуант
               .welcome_form-text
@@ -52,9 +55,9 @@ block content
         form.form.welcome_form
           span.welcome_text-span Забыли пароль?
           p.welcome_text-p Ничего страшного, введите свой e-mail, и мы вышлем вам инструкции по восстановлению пароля
-          label
-            input
-            span
+          label.form__label
+            input.form__input
+            span.form__icon
           a(href="#").button.welcome_form-button Восстановить пароль
           .welcome_form-text
             span.welcome_form-span Вспомнили пароль?

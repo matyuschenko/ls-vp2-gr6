@@ -1,0 +1,90 @@
+
+.welcome__wrapper {
+	background: url(../img/riders.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+}
+.flip-container {
+	margin-top: 100px;
+}
+.flip-card {
+	width: 580px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.welcome__intro {
+	color: #fff;
+}
+.welcome_h1 {
+	font: 700 42px Panton;
+}
+
+.welcome__card {
+	background-color: #fff;
+	border-radius: 20px;
+	margin: 0 auto;
+	overflow: hidden;
+	text-align: left;
+}
+.welcome__card_login {
+	width: 310px;
+}
+.welcome_form {
+	margin-bottom: 10px;
+}
+.form__label {
+	display: block;
+	border-bottom: 1px solid #e1e1e1;
+	padding: 10px 15px;
+	
+}
+
+.form__input {
+	border: none;
+	width: 245px;
+	color: #323232;
+	&:focus {
+		outline: none;
+		color: #000;
+	}
+	&:active {
+		color: #000;
+	}
+}
+
+.form__icon {
+	color: #e1e1e1;
+	float: left;
+	text-align: center;
+	width: 20px;
+	margin-right: 10px;
+}
+.form__input:focus + .form__icon {
+	color: $btn-inc-hover;
+}
+.welcome__links-wrapper {
+	padding: 0 15px;
+}
+.welcome_form-link {
+	font-weight: 600;
+	font-size: 14px;
+	color: $btn-inc;
+	text-decoration: none;
+}
+
+.flip-card__back-side,
+.welcome__recovery {
+	display: none;
+}
+
+.welcome__footer {
+	position: absolute;
+	bottom: 20px;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+}
