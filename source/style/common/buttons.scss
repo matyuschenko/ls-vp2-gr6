@@ -25,3 +25,37 @@
     transform: translateY(-50%);
   }
 }
+
+.button {
+  border-radius: 20px;
+  padding: 10px 15px;
+  font: 700 14px Panton;
+  display: inline-block;
+  text-decoration: none;
+}
+.button_submit {
+  background-color: $btn-inc;
+  color: #fff;
+  &:hover {
+    background-color: $btn-inc-hover;
+  }
+}
+.button_reset {
+  background-color: $btn-dec;
+  color: #fff;
+  &:hover {
+    background-color: $btn-dec-hover;
+  }
+}
+.button_transparent {
+  border: 1px solid $btn-inc;
+  color: $btn-inc;
+  &:hover {
+    background-color: $btn-inc-hover;
+    color: #fff;
+  }
+}
+.welcome_form-button {
+  display: block;
+  text-align: center;
+}
