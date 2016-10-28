@@ -2,31 +2,11 @@
   width: 680px;
 }
 
-.modal__header {
-  width: 100%;
-  min-height: 70px;
-  padding: 0 30px;
-  background-color: $grey95;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.modal-btn__close {
-  color: $grey66;
-  font-size: 30px;
-}
-
 .add-photo__name {
   min-height: 100px;
   padding: 0 30px;
   display: flex;
   align-items: center
-}
-
-.add-photo__title {
-  font-weight: 600;
-  margin-right: 20px;
 }
 
 .drop-photo {
@@ -60,13 +40,4 @@
 
 .error-notification {
   display: none;
-}
-
-.modal__footer {
-  width: 100%;
-  min-height: 70px;
-  padding: 0 30px;
-  background-color: $grey95;
-  display: flex;
-  align-items: center
 }

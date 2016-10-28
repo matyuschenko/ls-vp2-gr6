@@ -4,11 +4,12 @@
         .modal__header
             h4.modal__title Добавить фотографии
             .i.fa.fa-times.modal-btn__close
+
         form.form.form__add-photo
 
             .form__add-photo_row.add-photo__name
-                span.add-photo__title Название
-                span.add-photo__input Как я провел лето
+                span.modal-form__left-col.modal-form__title Название
+                input.modal-form__input(placeholder="Как я провел лето")
 
             .form__add-photo_row.drop-photo
 
@@ -16,12 +17,11 @@
                     .drop-photo__pic.i.fa.fa-camera.modal-icon__camera
                     .drop-photo__text Перетащите фото сюда или #[a.link.choose-files(href="#") выберите файл]
 
-                    // Зона куда будут перемещаться файлы
-
             .form__add-photo_row
                 .error-notification Выбран неверный формат изображений. Попробуйте снова
 
-        .modal__footer
-            a.button.button_submit Сохранить
-            a.button.button_transparent.button_light Отменить
+        .modal-footer
+            .modal-footer__buttons-group
+                a.button.button_submit Сохранить
+                a.button.button_transparent.button_light Отменить
 

@@ -1,28 +1,31 @@
 .modal-window
-    .modal-container
+    .modal-container.modal-container_add-album
 
         .modal__header
             h4.modal__title Добавить альбом
-            a(href="#").modal-button.close
+            .i.fa.fa-times.modal-btn__close
+
         form.form.form__add-album
             .input-group
-                label Название
-                input.input(placeholder="Название альбома")
+                span.modal-form__left-col.modal-form__title  Название
+                input.modal-form__input(placeholder="Название альбома")
 
             .input-group
-                label Описание
-                input.input.input-text(placeholder="Описание альбома")
+                span.modal-form__left-col.modal-form__title  Описание
+                textarea.modal-form__input(placeholder="Описание альбома")
 
             .input-group.input-group_upload
-                .image-preview
-                    img(src="#" alt="").image-preview_pic
-                label.file-label.button.button_transparent Загрузить обложку
-                small.form__notice (файл должен быть размером не более 1024 КБ)
+                span.modal-form__left-col
+                    .modal__image-preview-wrapper
+                        img(src="assets/img/header_bg.jpg" alt="").image-preview
+                .button.button_transparent.button_load-cover Загрузить обложку
+                .form__notice.minor-text (файл должен быть размером не более #[span.emphasize 1024 КБ])
 
-
-            .form_add-photo-buttons
-                a(href="#").button.button_ok Сохранить
-                a(href="#").button.button_link-close Отменить
-                a(href="#").button.button_red Удалить
+        .modal-footer
+            .modal-footer__buttons-group
+                a.button.button_submit Сохранить
+                a.button.button_transparent.button_light Отменить
+            .modal-footer__buttons-group
+                a.button.button_reset Удалить
 
 
