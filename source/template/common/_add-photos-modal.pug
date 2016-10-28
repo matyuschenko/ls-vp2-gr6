@@ -1,23 +1,27 @@
 .modal-window
-    .modal-container
+    .modal-container.modal-container_add-photos
 
         .modal__header
             h4.modal__title Добавить фотографии
-            a.modal-button.close
+            .i.fa.fa-times.modal-btn__close
         form.form.form__add-photo
 
-            .form__add-photo_row
-                span.form_add-photo__subtitle Название
-                span.form_add-photo__subtitle2 как я провел лето
+            .form__add-photo_row.add-photo__name
+                span.add-photo__title Название
+                span.add-photo__input Как я провел лето
 
-            .form__add-photo_row
+            .form__add-photo_row.drop-photo
+
+                .drop-photo__wrapper
+                    .drop-photo__pic.i.fa.fa-camera.modal-icon__camera
+                    .drop-photo__text Перетащите фото сюда или #[a.link.choose-files(href="#") выберите файл]
 
                     // Зона куда будут перемещаться файлы
 
             .form__add-photo_row
                 .error-notification Выбран неверный формат изображений. Попробуйте снова
 
-            .form_add-photo-buttons
-                a.button.button_ok Сохранить
-                a.button.button_link-close Отменить
+        .modal__footer
+            a.button.button_submit Сохранить
+            a.button.button_transparent.button_light Отменить
 
