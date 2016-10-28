@@ -8,44 +8,68 @@
 	width: 100%;
 }
 .flip-container {
-	margin-top: 100px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	width: 580px;
+	height: 490px;
+	perspective: 1000px;
 }
 .flip-card {
-	width: 580px;
 	text-align: center;
-	margin: 0 auto;
-}
+	position: relative;
+	transition: 0.9s;
+	transform-style: preserve-3d;
 
+}
+.flip-card__front-side {
+	position: absolute;
+	backface-visibility: hidden;
+	transform: rotateY(0deg);
+}
+.flip-card__back-side {
+	position: absolute;
+	left: 0;
+	right: 0;
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
+}
 .welcome__intro {
 	color: #fff;
 }
 .welcome_h1 {
 	font: 700 42px Panton;
 }
-
+.welcome_text {
+	margin-bottom: 35px;
+}
 .welcome__card {
 	background-color: #fff;
 	border-radius: 20px;
 	margin: 0 auto;
 	overflow: hidden;
 	text-align: left;
+	width: 280px;
 }
 .welcome__card_login {
-	width: 310px;
+	
 }
 .welcome_form {
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 .form__label {
 	display: block;
 	border-bottom: 1px solid #e1e1e1;
-	padding: 10px 15px;
+	padding: 9px 15px;
 	
 }
 
 .form__input {
 	border: none;
-	width: 245px;
+	width: 215px;
 	color: #323232;
 	&:focus {
 		outline: none;
@@ -74,7 +98,9 @@
 }
 .welcome_form-text {
 	font-size: 14px;
-	line-height: 35px;
+	margin-top: 6px;
+	margin-bottom: 10px;
+
 }
 .welcome_form-link {
 	font-weight: 600;
@@ -85,14 +111,26 @@
 		color: $btn-inc-hover;
 	}
 }
+.welcome__error-mes {
+	background-color: #ffe0e0;
+	border-radius: 3px;
+	font-weight: 600;
+	color: #323232;
+	padding: 8px 10px;
+	margin-bottom: 20px;
+	display: none;
+}
 .welcome_form-span {
 	margin-right: 5px;
 }
+.welcome_text-span {
+	font-weight: 600;
+}
 
-.flip-card__back-side,
-.welcome__recovery {
+.back-side__recovery {
 	display: none;
 }
+
 
 .welcome__footer {
 	position: absolute;
