@@ -1,0 +1,72 @@
+.modal-container_add-photos {
+  width: 680px;
+}
+
+.modal__header {
+  width: 100%;
+  min-height: 70px;
+  padding: 0 30px;
+  background-color: $grey95;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-btn__close {
+  color: $grey66;
+  font-size: 30px;
+}
+
+.add-photo__name {
+  min-height: 100px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center
+}
+
+.add-photo__title {
+  font-weight: 600;
+  margin-right: 20px;
+}
+
+.drop-photo {
+  margin: 0 10px 40px 10px;
+  min-width: 650px;
+  min-height: 320px;
+  border: $grey95 dashed 3px;
+  border-radius: 15px;
+  background-color: $grey98;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drop-photo__wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 175px;
+}
+
+.modal-icon__camera {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 32px;
+  color: $grey84;
+}
+
+.drop-photo__text {
+  text-align: center;
+}
+
+.error-notification {
+  display: none;
+}
+
+.modal__footer {
+  width: 100%;
+  min-height: 70px;
+  padding: 0 30px;
+  background-color: $grey95;
+  display: flex;
+  align-items: center
+}

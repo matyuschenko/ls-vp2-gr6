@@ -4,19 +4,22 @@
 @import 'common/buttons';
 @import 'common/socials';
 @import 'common/myalbums';
+@import 'common/links';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'pages/album';
 @import 'pages/main';
 @import 'pages/search';
 @import 'pages/welcome';
+@import 'modal/add-photos';
 
 * {
 	box-sizing: border-box;
 }
-  html {
-    font: 16px 'Proxima Nova';
-  }
+
+html {
+  font: 16px 'Proxima Nova';
+}
 
 button {
   border: none;
