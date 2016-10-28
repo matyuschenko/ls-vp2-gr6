@@ -41,3 +41,23 @@ mixin albumItem(title, category, comments, likes, thumb, user_avatar)
                     svg.svg-category
                         use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#album")
                     span= category
+
+mixin myAlbumItem(category, imgUrl, description, countPhotos)
+    li.my-albums-item
+        .my-albums-item-holder
+            .my-albums-photo
+                a.open-album.js-open-album(href="#")
+                    .album-mask__my-album
+                        .album-mask_my-album__opacity
+                        .album-mask_my-album__non-opacity
+                            span.album-mask_description.album-mask_description__album= description
+                            span.album-mask_description.album-mask_description__countphotos= countPhotos
+                    .album-photo__thumb.album-photo_myalbum__thumb(style="background-image: url(" + imgUrl + ")", alt="")
+            .album-footer
+                .album-footer-edit
+                    a.my-albums-edit.js-edit-album(href="#")
+                        svg.svg-edit
+                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#edit")
+                .album-category.album-category__my-albums
+                    a.category-name(href="album.html")
+                        span.album-name__my-albums= category
