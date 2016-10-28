@@ -8,6 +8,7 @@
 }
 
 .button_animated {
+  font-family: Panton;
   background: #fff;
   float: right;
   padding: 0 22px;
@@ -16,6 +17,17 @@
   box-sizing: border-box;
   text-decoration: none;
   width: 42px;
+  right: 40px;
+  display: block;
+  transition: 0.2s linear;
+  font-size: 14px;
+  @media screen and (max-width: 768px){
+    right: 25px;
+  }
+  @media screen and (max-width: 330px){
+    right: 10px;
+    top: 57px;
+  }
   .fa {
     color: #a0a09f;
     font-size: 22px;
@@ -23,6 +35,36 @@
     top: 50%;
     left: 13px;
     transform: translateY(-50%);
+  }
+  &:hover {
+    background: #28bbf0;
+    font-family: Panton;
+    font-size: 14px;
+    color: #ffffff;
+    i {
+      color: #ffffff;
+    }
+    .svg-add-album{
+      *{
+        fill: #ffffff;
+      }
+    }
+  }
+}
+
+.button_add{
+  &:hover{
+    width: 115px;
+  }
+}
+.button_edit-info {
+  &:hover {
+    width: 155px;
+  }
+}
+.button_loguot {
+  &:hover {
+    width: 100px;
   }
 }
 

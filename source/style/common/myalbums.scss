@@ -136,33 +136,10 @@
   font-weight: 600;
 
 }
-.button_add{
-  display: block;
-  position: absolute;
-  right: 40px;
-  transition: 0.2s linear;
-  @media screen and (max-width: 768px){
-    right: 25px;
-  }
-  @media screen and (max-width: 330px){
-    right: 10px;
-    top: 57px;
-  }
-  &:hover{
-    background: #28bbf0;
-    width: 115px;
-    font-family: Panton;
-    font-size: 14px;
-    color: #ffffff;
-    .svg-add-album{
-      *{
-        fill: #ffffff;
-      }
-    }
-  }
-}
+
 .add-album-btn-text{
   vertical-align: top;
+  margin-left: 22px;
 
 }
 .svg-add-album{
@@ -170,8 +147,16 @@
   height: 20px;
   margin-top: 11px;
   margin-left: -9px;
-  margin-right: 12px;
+  margin-right: -10px;
     *{
       fill: #9f9e9e;
     }
+}
+
+.news-content {
+  .button_transparent {
+    display: block;
+    width: 125px;
+    margin: auto;
+  }
 }
