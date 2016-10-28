@@ -25,44 +25,55 @@ block content
                   i(class="fa fa-lock fa-lg" aria-hidden="true")
             .welcome__links-wrapper
               .welcome_form-link-wrapper
-                a(href="#").welcome_form-link Забыли пароль?
+                a(href="#").welcome_form-link#welcome__forget-link Забыли пароль?
+              .welcome__error-mes E-mail или пароль не верен
               a.button.button_submit.welcome_form-button Войти
               .welcome_form-text
                 span.welcome_form-span Нет аккаунта?
-                a(href="#").welcome_form-link Зарегистрироваться
+                a(href="#").welcome_form-link#welcome__register-link Зарегистрироваться
         .flip-card__back-side
-          .welcome__intro.welcome__intro_registration
-            h1.welcome_h1 Регистрация
-          .welcome__card.welcome__card_registration
-            form.form.welcome_form
-              label.form__label
-                input.form__input
-                span.form__icon
-              label.form__label
-                input.form__input
-                span.form__icon
-              label.form__label
-                input.form__input
-                span.form__icon
-              span Ваши данные остаются строго конфеденциальны
-              a(href="#").button.welcome_form-button Создать аккуант
-              .welcome_form-text
-                span.welcome_form-span Уже зарегистрированы?
-                a(href="#").welcome_form-link Войти
-    .welcome__recovery
-      .welcome__intro
-        h1.welcome_h1 Восстановление пароля
-      .welcome__card
-        form.form.welcome_form
-          span.welcome_text-span Забыли пароль?
-          p.welcome_text-p Ничего страшного, введите свой e-mail, и мы вышлем вам инструкции по восстановлению пароля
-          label.form__label
-            input.form__input
-            span.form__icon
-          a(href="#").button.welcome_form-button Восстановить пароль
-          .welcome_form-text
-            span.welcome_form-span Вспомнили пароль?
-            a(href="#").welcome_form-link Войти
+          .back-side__registration
+            .welcome__intro.welcome__intro_registration
+              h1.welcome_h1 Регистрация
+            .welcome__card.welcome__card_registration
+              form.form.welcome_form
+                label.form__label
+                  input.form__input(type="text" name="user" id="user" value="" placeholder="Имя")
+                  span.form__icon
+                    i(class="fa fa-user" aria-hidden="true")
+                label.form__label
+                  input.form__input(type="email" name="email" id="email" value="" placeholder="Электронная почта")
+                  span.form__icon
+                    i(class="fa fa-envelope" aria-hidden="true")
+                label.form__label
+                  input.form__input(type="password" name="password" id="password" value="" placeholder="Пароль")
+                  span.form__icon
+                    i(class="fa fa-lock fa-lg" aria-hidden="true")
+                .welcome__links-wrapper
+                  .welcome_form-text Ваши данные остаются строго конфиденциальны
+                  a(href="#").button.button_submit.welcome_form-button Создать аккаунт
+                  .welcome_form-text
+                    span.welcome_form-span Уже зарегистрированы?
+                    a(href="#").welcome_form-link.welcome__login-link Войти
+          .back-side__recovery
+            .welcome__recovery
+              .welcome__intro
+                h1.welcome_h1 Восстановление пароля
+              .welcome__card
+                form.form.welcome_form
+                  .welcome__links-wrapper
+                    .welcome_form-text
+                      span.welcome_text-span Забыли пароль?
+                      p.welcome_text-p Ничего страшного, введите свой e-mail, и мы вышлем вам инструкции по восстановлению пароля
+                  label.form__label
+                    input.form__input(type="email" name="email" id="email" value="" placeholder="Электронная почта")
+                    span.form__icon
+                      i(class="fa fa-envelope" aria-hidden="true")
+                  .welcome__links-wrapper
+                    a(href="#").button.button_submit.welcome_form-button Восстановить пароль
+                    .welcome_form-text
+                      span.welcome_form-span Вспомнили пароль?
+                      a(href="#").welcome_form-link.welcome__login-link Войти
     footer.welcome__footer
       .copyright
         span.footer-text 2016 Создано командой профессионалов на продвинутом курсе по веб-разработке от LoftSchool
