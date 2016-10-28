@@ -1,0 +1,177 @@
+.my-album{
+  width: 100%;
+  position: relative;
+}
+.my-album_content{
+  margin: 0 60px;
+  @media screen and (min-width: 1920px) {
+    margin: 0 170px;
+  }
+  @media screen and (max-width: 768px) {
+    margin: 0 25px;
+  }
+  @media screen and (max-width: 330px) {
+    margin: 0 10px;
+  }
+}
+.my-album__holder{
+  padding: 60px 0 40px 10px;
+  margin: 0;
+  width: 100%;
+  @extend %clearfix;
+  clear: both;
+
+}
+.my-album-container{
+  @extend %clearfix;
+  clear: both;
+  list-style: none;
+  padding: 0;
+}
+.my-albums-item{
+  width: 23%;
+  float: left;
+  margin: 0 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+  @media screen and (min-width: 1920px) {
+    width: 18%;
+
+  }
+  @media screen and (max-width: 768px) {
+    width: 30%;
+  }
+  @media screen and (max-width: 330px) {
+    width: 100%;
+  }
+}
+.my-albums-photo{
+  position: relative;
+  overflow: hidden;
+  &:hover{
+    .album-mask__my-album{
+      top: 0;
+    }
+  }
+}
+.album-mask__my-album{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border-radius: 2px 2px 0 0;
+  cursor: pointer;
+  transition: 0.2s linear;
+  top: 100%;
+
+  .album-mask_my-album__opacity {
+    background: rgba(#000, .1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .album-mask_my-album__non-opacity{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+
+  }
+}
+
+.album-photo__thumb{
+  background: no-repeat center center;
+}
+.svg-edit{
+  width: 20px;
+  height: 20px;
+  * {
+    fill: #d6d6d6;
+  }
+  &:hover{
+    * {
+      fill: #848484;
+    }
+  }
+
+}
+.album-mask_description{
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 0 0 20px 20px;
+  &__album{
+    bottom: 50px;
+  }
+  &__countphotos{
+    font-family: Proxima Nova;
+    font-weight: 600;
+  }
+}
+
+.album-footer{
+  @extend %clearfix;
+  clear: both;
+  height: 50px;
+  padding: 15px 0 15px 20px;
+  background: #ffffff;
+}
+.album-footer-edit{
+  float: left;
+}
+.album-category{
+  float: right;
+}
+.album-name__my-albums{
+  font-family: Proxima Nova;
+  font-weight: 600;
+
+}
+.button_add{
+  display: block;
+  position: absolute;
+  right: 40px;
+  transition: 0.2s linear;
+  @media screen and (max-width: 768px){
+    right: 25px;
+  }
+  @media screen and (max-width: 330px){
+    right: 10px;
+    top: 57px;
+  }
+  &:hover{
+    background: #28bbf0;
+    width: 115px;
+    font-family: Panton;
+    font-size: 14px;
+    color: #ffffff;
+    .svg-add-album{
+      *{
+        fill: #ffffff;
+      }
+    }
+  }
+}
+.add-album-btn-text{
+  vertical-align: top;
+
+}
+.svg-add-album{
+  width: 20px;
+  height: 20px;
+  margin-top: 11px;
+  margin-left: -9px;
+  margin-right: 12px;
+    *{
+      fill: #9f9e9e;
+    }
+}
