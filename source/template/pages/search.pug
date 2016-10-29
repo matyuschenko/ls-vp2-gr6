@@ -6,26 +6,32 @@ block variables
 
 block content
 
-    header.header
+    header.header__search
         h1.header__search-title Исследуй мир
-        a(href="index.html").btn.btn_animated.btn__logut
-            span На главную
-    .search__holder
-        .search__column
+        a.btn.button_animated
+            i(class="fa fa-home")
+
+    .search__holder_page
+        .search__column_left
             .search_user-info
                 .user-photo
                     +avatar
                 .user-info
                     h4.user-info__name Антон Черепов
-        .search__column
+        .search__column_right
             form.search-form
-                button(type="submit").search-form__button
+                button(type="submit").search-form__button.fa.fa-search
                 input(type="text" placeholder="Исследовать мир").search-form__input
-        .search__column
-            a(href="#").show-new Показать новые
+                a(href="#").show-new Показать новые
     section.search__content
         h2.search__result-title По запросу «Природа» найдено 6 результатов
         .album-container
+            +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "10", "10", "slide-1.jpg", "default_avatar.jpg")
+            +albumItem("Путешествие", "Прогулки по воде", "9", "9", "bg/welcome-bg.jpg", "default_avatar.jpg")
+            +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "8", "8", "no_photo.jpg", "default_avatar.jpg")
+            +albumItem("Путешествие", "Прогулки по воде", "7", "7", "no_photo.jpg", "default_avatar.jpg")
+            +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "6", "6", "no_photo.jpg", "default_avatar.jpg")
+            +albumItem("Путешествие", "Прогулки по воде", "5", "5", "no_photo.jpg", "default_avatar.jpg")
 
 
     include ../common/_footer
