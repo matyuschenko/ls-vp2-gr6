@@ -78,40 +78,95 @@
     top: 240px;
     text-align: right;
     z-index:10;
-    .search-form {
-      height: 100%;
-      &__input {
-        position: relative;
-        display: inline-block;
-        width: 380px;
-        height: 40px;
-        margin: 10px 60px 10px 0;
-        padding: 0 30px 0 45px;
-        border: none;
-        border-radius: 999px;
-        outline: none;
-        z-index: 1;
-      }
-      &__button {
-        width: 30px;
-        height: 30px;
-        border:none;
-        font-size:22px;
-        color: #323232;
-        background-color: #fff;
-        position: relative;
-        z-index: 2;
-        transform: translate(143%, 10%);
-        opacity:0.6;
-        cursor: pointer;
-        outline:none;
-      }
-    }
 
+  }
+}
+.search-form {
+  height: 100%;
+  &__input {
+    position: relative;
+    display: inline-block;
+    width: 380px;
+    height: 40px;
+    margin: 10px 60px 10px 0;
+    padding: 0 30px 0 45px;
+    border: none;
+    border-radius: 999px;
+    outline: none;
+    z-index: 1;
+  }
+  &__button {
+    width: 30px;
+    height: 30px;
+    border:none;
+    font-size:22px;
+    color: #323232;
+    background-color: #fff;
+    position: relative;
+    z-index: 2;
+    transform: translate(143%, 10%);
+    opacity:0.6;
+    cursor: pointer;
+    outline:none;
   }
 }
 .header__buttons-item{
   & span{
     margin-left: 22px;
   }
+}
+
+
+.header__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &-title {
+    font-family:Panton;
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  .button_animated .fa {
+    left: 12px;
+  }
+}
+
+.search__holder_page {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(241, 241, 241, 0.9);
+  .search__column_right {
+    width: 60%;
+    .search-form {
+      .show-new {
+        color: $btn-inc;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      &__input {
+        margin-right: 20px;
+      }
+    }
+  }
+  .search__column_left {
+    width: 30%;
+    text-align: center;
+    .search_user-info {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .user-photo {
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+        max-height: 45px;
+        max-width:45px;
+        .user-avatar__img img {
+          width: 45px;
+        }
+      }
+    }
+  }
+
 }
