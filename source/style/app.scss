@@ -11,9 +11,10 @@
 @import 'pages/main';
 @import 'pages/search';
 @import 'pages/welcome';
-@import 'modal/_modal-common';
+@import 'modal/modal-common';
 @import 'modal/add-photos';
 @import 'modal/add-album';
+@import 'modal/edit-user';
 
 * {
 	box-sizing: border-box;
