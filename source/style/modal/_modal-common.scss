@@ -1,0 +1,51 @@
+.modal__header {
+  width: 100%;
+  min-height: 70px;
+  padding: 0 30px;
+  background-color: $grey95;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-btn__close {
+  color: $grey66;
+  font-size: 30px;
+}
+
+.modal-form__left-col {
+  display: inline-block;
+  width: 100px;
+}
+
+.modal-form__title {
+  vertical-align: top;
+  font-weight: 600;
+}
+
+.modal-form__input {
+  min-width: 500px;
+  padding: 12px 20px;
+  resize: none;
+  border-radius: 15px;
+  border: 1px $grey84 solid;
+}
+
+.modal-footer {
+  width: 100%;
+  min-height: 70px;
+  padding: 0 30px;
+  background-color: $grey95;
+  display: flex;
+  justify-content: space-between;
+  align-items: center
+}
+
+.minor-text {
+  font-size: 10px;
+  font-style: italic;
+}
+
+.emphasize {
+  font-weight: 600;
+}
