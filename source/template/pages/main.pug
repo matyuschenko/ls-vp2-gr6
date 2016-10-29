@@ -17,7 +17,7 @@ block content
             .header__buttons-item
                 a.btn.button_animated.button_edit-info
                     i(class="fa fa-pencil")
-                    //span Редактировать
+                    span Редактировать
             .header__buttons-item
                 a(href="#").btn.button_animated.button_loguot
                     i(class="fa fa-power-off")
@@ -27,6 +27,21 @@ block content
                 button(type="submit").search-form__button.fa.fa-search
                 input(type="text" placeholder="Исследовать мир").search-form__input
 
+    .changes
+        .changes__top
+            form(action="/" method="POST" enctype="multipart/form-data").changes__form
+                .changes__avatar
+                    i(aria-hidden="true").fa.fa-camera
+                    span="Изменить фото"
+                    input(type="file" name="avatar").changes__file__avatar
+                .changes__data
+                    input(type="text" name="username" value="Антон Черепов").input
+                    textarea(name="userdescription").textarea="Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых."
+                    +socialsBlock
+                .changes__background
+                    i(aria-hidden="true").fa.fa-camera
+                    span="Изменить фон"
+                    input(type="file" name="avatar").changes__file__background
 
     section.news-content
         .new-photos-album
