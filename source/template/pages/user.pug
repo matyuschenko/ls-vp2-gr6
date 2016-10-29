@@ -5,4 +5,42 @@ block variables
     - var title = 'Пользователь'
 
 block content
-    include ../common/_header
+    header.header
+        .header__user-info
+            .user-photo
+                +avatar
+            .user-info
+                h4.user-info__name Антон Черепов
+                .user-info_desc Я веб-разработчик. Мне 24  года. Люблю путешествия, кодинг, фриланс и активный отдых.
+                +socialsBlock
+        .header__buttons
+            .header__buttons-item
+                a.btn.button_animated.button_edit-info
+                    i(class="fa fa-home")
+                    span На главную
+        .search__holder
+            form.search-form
+                button(type="submit").search-form__button.fa.fa-search
+                input(type="text" placeholder="Исследовать мир").search-form__input
+
+    section.my-album
+        .my-album_content
+            .my-album__holder
+                h2.album-title.album-title__my-albums Альбомы
+                a(href="#").btn.button_animated.button_add
+                    svg.svg-add-album
+                        use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#add")
+                    span.add-album-btn-text Добавить
+            ul.my-album-container
+                +myAlbumItem("Одинокая птица", "./assets/img/default_avatar.jpg", "Лучший альбом",  "15 Фотографий")
+                +myAlbumItem("В последнюю осень", "./assets/img/default_avatar.jpg", "Самый лучший альбом", "10 Фотографий")
+                +myAlbumItem("Путь домой", "./assets/img/default_avatar.jpg", "Хороший альбом", "3 Фотографии")
+                +myAlbumItem("Беспечный ангел", "./assets/img/default_avatar.jpg", "Любимый альбом", "21 Фотография")
+                +myAlbumItem("Музыка для мужика", "./assets/img/default_avatar.jpg", "Текущий альбом", "12 Фотографий")
+                +myAlbumItem("Московские звонки", "./assets/img/default_avatar.jpg", "Почти забытый альбом", "14 Фотографий")
+    include ../common/_footer
+
+
+
+
+

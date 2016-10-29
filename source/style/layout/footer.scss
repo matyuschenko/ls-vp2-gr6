@@ -1,0 +1,70 @@
+.footer {
+  background: url('../img/header_bg.jpg');
+  background-repeat:no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: bottom;
+  overflow: hidden;
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  .fa {
+    font-size: 42px;
+  }
+  &::before {
+    display: inline-block;
+    content: '';
+    width: 100%;
+    min-height: 70px;
+    position: absolute;
+    background: linear-gradient(to top, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, .55) 98%, rgba(0, 0, 0, .55) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#a6000000',GradientType=0 );
+    z-index: 1;
+  }
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  overflow: hidden;
+  padding: 14px 0;
+  position: relative;
+  z-index:10;
+}
+
+.footer-column {
+  font: 16px/24px;
+  color: #fff;
+  width: 30%;
+  &.center {
+    width: 15%;
+    text-align: center;
+  }
+  img {
+    padding: 8px 0 0 0;
+  }
+
+  &.right {
+    text-align: right;
+    opacity: 0.4;
+    width: 30%;
+  }
+
+  .year {
+  border-right: 1px solid rgba(#fff, .4);
+  padding: 0 5px 0 0;
+  margin: 0 5px 0 0;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+.search-page {
+  footer {
+    background: #202020;
+  }
+}
+
