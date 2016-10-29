@@ -96,3 +96,15 @@
 
   }
 }
+.header__buttons-item{
+  & span{
+    margin-left: 20px;
+  }
+}
+.header__buttons-item{
+  a{
+    &:hover{
+      width: 200px;
+    }
+  }
+}
