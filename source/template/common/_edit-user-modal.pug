@@ -1,48 +1,50 @@
 .modal-window
-    .modal-container
+    .modal-container.modal-container_middle
 
         .modal__header
             h4.modal__title Редактировать профиль
-            a(href="#").modal-button.close
+            .i.fa.fa-times.modal-btn__close
+
         form.form.form__edit-user
-            .input-group
-                label Имя
-                input.input(placeholder="Имя")
-                input.input(placeholder="Фамилия")
+            .modal__form-group.modal__form-group_edit-user
+                .input-group
+                    span.modal-form__left-col.modal-form__title   Имя
+                    input.modal-form__input.modal-form__input_small(placeholder="Имя")
+                    input.modal-form__input.modal-form__input_small(placeholder="Фамилия")
 
-            .input-group
-                label О себе
-                input.input.input-text(placeholder="О себе")
+                .modal__input-row
+                    span.modal-form__left-col.modal-form__title   О себе
+                    textarea.modal-form__input(placeholder="О себе")
 
-            .input-group.input-group_upload
-                .image-preview
-                    img(src="#" alt="").image-preview_pic
-                label.file-label.button.button_transparent Загрузить фотографию
-                small.form__notice (файл должен быть размером не более 512 КБ)
+                .modal__input-row.modal__input-row_middle-align
+                    span.modal-form__left-col
+                        .modal__image-preview-wrapper
+                            img(src="assets/img/header_bg.jpg" alt="").image-preview
+                    .button.button_transparent.button_load-cover Загрузить фотографию
+                    .form__notice.minor-text (файл должен быть размером не более #[span.emphasize 512 КБ])
 
-            .input-group.input-group_upload
-                .image-preview
-                    img(src="#" alt="").image-preview_pic
-                label.file-label.button.button_transparent Загрузить фон
-                small.form__notice (файл должен быть размером не более 1024 КБ)
+                .modal__input-row.modal__input-row_middle-align
+                    span.modal-form__left-col
+                        .modal__image-preview-wrapper
+                            img(src="assets/img/header_bg.jpg" alt="").image-preview
+                    .button.button_transparent.button_load-cover Загрузить фон
+                    .form__notice.minor-text (файл должен быть размером не более #[span.emphasize 1024 КБ])
 
-            .input-group
-                label Вконтакте
-                input.input.input-text(placeholder="О себе")
-            .input-group
-                label Facebook
-                input.input.input-text(placeholder="О себе")
-            .input-group
-                label E-mail
-                input.input.input-text(placeholder="О себе")
-            .input-group
-                label Twitter
-                input.input.input-text(placeholder="О себе")
+            .modal__form-group.modal__form-group_edit-user
+                .modal__input-row.modal__input-row_middle-align
+                    span.modal-form__left-col.modal-form__title   Вконтакте
+                    input.modal-form__input.modal-form__input_small(placeholder="https://vk.com/johndoe")
+                .modal__input-row.modal__input-row_middle-align
+                    span.modal-form__left-col.modal-form__title   Facebook
+                    input.modal-form__input.modal-form__input_small(placeholder="https://facebook.com/johndoe")
+                .modal__input-row.modal__input-row_middle-align
+                    span.modal-form__left-col.modal-form__title   E-mail
+                    input.modal-form__input.modal-form__input_small(placeholder="info@johndoe.com")
+                .modal__input-row.modal__input-row_middle-align
+                    span.modal-form__left-col.modal-form__title   Twitter
+                    input.modal-form__input.modal-form__input_small(placeholder="https://twitter.com/johndoe")
 
-
-            .form_add-photo-buttons
-                a(href="#").button.button_ok Сохранить
-                a(href="#").button.button_link-close Отменить
-
-
-
+        .modal-footer
+            .modal-footer__buttons-group
+                a.button.button_submit Сохранить
+                a.button.button_transparent.button_light Отменить

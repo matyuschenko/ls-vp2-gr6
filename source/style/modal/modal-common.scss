@@ -1,3 +1,7 @@
+.modal-container_middle {
+  width: 680px;
+}
+
 .modal__header {
   width: 100%;
   min-height: 70px;
@@ -13,6 +17,15 @@
   font-size: 30px;
 }
 
+.modal__input-row {
+  margin-bottom: 20px;
+}
+
+.modal__input-row_middle-align {
+  display: flex;
+  align-items: center;
+}
+
 .modal-form__left-col {
   display: inline-block;
   width: 100px;
@@ -24,11 +37,19 @@
 }
 
 .modal-form__input {
-  min-width: 500px;
+  min-width: 490px;
   padding: 12px 20px;
   resize: none;
   border-radius: 15px;
   border: 1px $grey84 solid;
+}
+
+.modal-form__input_small {
+  min-width: 240px;
+}
+
+.modal-form__input_high {
+  min-height: 120px;
 }
 
 .modal-footer {
@@ -44,6 +65,11 @@
 .minor-text {
   font-size: 10px;
   font-style: italic;
+}
+
+.form__notice {
+  display: inline-block;
+  max-width: 200px;
 }
 
 .emphasize {
