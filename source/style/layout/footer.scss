@@ -12,6 +12,16 @@
   .fa {
     font-size: 42px;
   }
+  &::before {
+    display: inline-block;
+    content: '';
+    width: 100%;
+    min-height: 70px;
+    position: absolute;
+    background: linear-gradient(to top, rgba(0, 0, 0, .55) 0%, rgba(0, 0, 0, .55) 98%, rgba(0, 0, 0, .55) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#a6000000',GradientType=0 );
+    z-index: 1;
+  }
 }
 
 .footer-content {
@@ -20,6 +30,8 @@
   justify-content: space-around;
   overflow: hidden;
   padding: 14px 0;
+  position: relative;
+  z-index:10;
 }
 
 .footer-column {
