@@ -1,0 +1,43 @@
+.modal-container_add-photos {
+  width: 680px;
+}
+
+.add-photo__name {
+  min-height: 100px;
+  padding: 0 30px;
+  display: flex;
+  align-items: center
+}
+
+.drop-photo {
+  margin: 0 10px 40px 10px;
+  min-width: 650px;
+  min-height: 320px;
+  border: $grey95 dashed 3px;
+  border-radius: 15px;
+  background-color: $grey98;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drop-photo__wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 175px;
+}
+
+.modal-icon__camera {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 32px;
+  color: $grey84;
+}
+
+.drop-photo__text {
+  text-align: center;
+}
+
+.error-notification {
+  display: none;
+}

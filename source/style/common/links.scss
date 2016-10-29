@@ -1,0 +1,9 @@
+.link {
+  font-weight: 600;
+  font-size: 14px;
+  color: $btn-inc;
+  text-decoration: none;
+  &:hover {
+    color: $btn-inc-hover;
+  }
+}
