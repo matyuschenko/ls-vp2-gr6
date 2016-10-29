@@ -1,27 +1,22 @@
 .modal-window
-    .modal-container
+    .modal-container.modal-container_middle
 
         .modal__header
             h4.modal__title Редактировать фотографию
-            a.modal-button.close
+            .i.fa.fa-times.modal-btn__close
 
         form.form.form__edit-photo
-            .form_photo-edit
-                .input-group
-                    label Название
-                    input.input(type="text" placeholder="Название альбома")
+            .modal__input-row.modal__input-row_middle-align
+                span.modal-form__left-col.modal-form__title  Название
+                input.modal-form__input(placeholder="Домик в лесу")
 
-                .input-group
-                    label Описание
-                    input.input.input-text(type="text" placeholder="Описание альбома")
+            .modal__input-row
+                span.modal-form__left-col.modal-form__title  Описание
+                textarea.modal-form__input.modal-form__input_high(placeholder="Описание фотографии может быть с #хештегами. Чтобы было красиво, описание должно быть на несколько строк. Убедитесь сами!")
 
-            .form_photo-delete
-                p.modal-p Вы хотите удалить это фото?
-                a(href="#").button.button_red Да
-                a(href="#").button.button_link-close Отменить
-
-
-            .form_add-photo-buttons
-                a(href="#").button.button_ok Сохранить
-                a(href="#").button.button_link-close Отменить
-                a(href="#").button.button_red Удалить
+        .modal-footer
+            .modal-footer__buttons-group
+                a.button.button_submit Сохранить
+                a.button.button_transparent.button_light Отменить
+            .modal-footer__buttons-group
+                a.button.button_reset Удалить
