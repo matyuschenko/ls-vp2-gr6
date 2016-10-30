@@ -28,4 +28,8 @@ $(document).ready(function(){
     $(".button_edit-info").on("click", function(){
         $(".changes").addClass("changes-active");
     })
+    $(".close__header__edit").on("click", function(){
+        $(".changes").removeClass("changes-active");
+    })
 });
+
