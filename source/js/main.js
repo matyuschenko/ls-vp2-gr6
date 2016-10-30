@@ -32,4 +32,3 @@ $(document).ready(function(){
         $(".changes").removeClass("changes-active");
     })
 });
-
