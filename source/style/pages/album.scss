@@ -1,0 +1,132 @@
+.header__album {
+  min-height:300px;
+  background-image: url('../img/header_bg.jpg');
+  background-position: top;
+  background-size:cover;
+  display: flex;
+  flex-direction:column;
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &::before {
+    display: inline-block;
+    content: '';
+    width: 100%;
+    min-height: 300px;
+    position: absolute;
+    background: linear-gradient(to left, rgba(255, 255, 255, .7) 0%, rgba(5, 5, 5, 0.55) 98%, rgba(0, 0, 0, 0.45) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#a6000000',GradientType=0 );
+    z-index: 1;
+  }
+  .header__user-info {
+    display: flex;
+    margin-top:30px;
+    flex: 1;
+    justify-content: center;
+    position: relative;
+    z-index:10;
+
+  }
+  .header-content {
+    display: flex;
+    flex-direction:column;
+    text-align: center;
+    margin-top: 50px;
+    flex:3;
+    position: relative;
+    z-index:10;
+    .my-album-title {
+      color: #ffffff;
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+    .my-album-desc {
+      color: #ffffff;
+      width: 75%;
+      margin: 0 auto;
+    }
+  }
+  .header__buttons {
+    flex: 1;
+    display: flex;
+    flex-direction:column;
+    margin-top: 15px;
+    position: relative;
+    z-index:10;
+    &-item:first-child {
+      margin-bottom: 10px;
+    }
+  }
+  .user-avatar__img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    margin-right:20px;
+    img {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .user-info__name {
+    margin-top: 15px;
+    color: #ffffff;
+  }
+}
+
+
+.gray-bg {
+  background: rgba(241, 241, 241, 0.75);
+  height: 60px;
+  width: 100%;
+  top: 240px;
+  text-align: center;
+  z-index: 10;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding:0;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+    li {
+      margin-left: 30px;
+      &:first-child {
+        margin-left:0;
+      }
+      span {
+        margin-right:5px;
+        font-weight:600;
+      }
+    }
+  }
+}
+.single-photo {
+  .album-photo {
+    padding: 0;
+  }
+  .album-item-holder {
+    .album-category {
+      padding: 16px 20px 10px;
+      width: 100%;
+    }
+  }
+
+  .photo-info {
+    position: absolute;
+    bottom: 19px;
+    left: 20px;
+    z-index: 2;
+  }
+  .photo-info__item {
+    color: #fff;
+    .fa {
+      color: #ffffff;
+    }
+  }
+  .fa {
+    color: #000;
+  }
+}
