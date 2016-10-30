@@ -6,3 +6,21 @@ block variables
 
 block content
     include ../common/_header
+    .changes.changes__album
+        form(action="/" method="POST" enctype="multipart/form-data").changes__form
+        .changes__top
+            .changes__container.changes__container__center
+                .user
+                    .user_image
+                    .user-info__name="Антон Черепов"
+                .changes__data
+                    input(type="text" name="username" value="Антон Черепов").input
+                    textarea(name="userdescription").textarea="Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых."
+                .changes__background
+                    i(aria-hidden="true").fa.fa-camera
+                    span="Изменить фон"
+                    input(type="file" name="avatar").changes__file__background
+        .changes__bottom
+            .changes__container
+                button.button.close__header__edit="Отменить"
+                input(type="submit" name="saveheader" value="Сохранить").input__submit

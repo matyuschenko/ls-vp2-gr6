@@ -28,8 +28,9 @@ block content
                 input(type="text" placeholder="Исследовать мир").search-form__input
 
     .changes
+        form(action="/" method="POST" enctype="multipart/form-data").changes__form
         .changes__top
-            form(action="/" method="POST" enctype="multipart/form-data").changes__form
+            .changes__container.changes__container__center
                 .changes__avatar
                     i(aria-hidden="true").fa.fa-camera
                     span="Изменить фото"
@@ -42,6 +43,11 @@ block content
                     i(aria-hidden="true").fa.fa-camera
                     span="Изменить фон"
                     input(type="file" name="avatar").changes__file__background
+        .changes__bottom
+            .changes__container
+                button.button.close__header__edit="Отменить"
+                input(type="submit" name="saveheader" value="Сохранить").input__submit
+
 
     section.news-content
         .new-photos-album
