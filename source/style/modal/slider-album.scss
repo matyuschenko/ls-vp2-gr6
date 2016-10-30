@@ -1,0 +1,94 @@
+.modal-slider__photo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.modal-btn__close-slider {
+  position: absolute;
+  left: 100%;
+  top: -30px;
+}
+
+.modal-slider__info {
+  margin: auto;
+}
+
+.modal-slider__info-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 25px 30px 12px 15px;
+}
+
+.modal-slider__author {
+  display: flex;
+  align-items: center;
+}
+
+.modal-slider__author-name {
+  margin-left: 20px;
+}
+
+.modal-slider__person-name {
+  font-weight: 600;
+}
+
+.modal-slider__likes-icon {
+  margin-right: 8px;
+}
+
+.modal-slider__description {
+  margin: 0 30px 40px 15px;
+}
+
+.modal-slider__photo-name {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 14px;
+}
+
+.modal-slider__comments {
+  padding: 0 20px 20px 15px;
+  background-color: $grey95;
+}
+
+.modal-slider__add-comment {
+  padding: 20px 0;
+  border-bottom: 1px solid $grey84;
+}
+
+.modal-slider__comments-header {
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.modal-slider__comment-pic-wrapper {
+  display: inline-block;
+  width: 120px;
+}
+
+.modal-slider__comment-right-col {
+  width: 75%;
+  vertical-align: top;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.modal-slider__comment-author {
+  margin-bottom: 20px;
+}
+
+.modal-slider__comment-input {
+  margin-bottom: 20px;
+}
+
+.modal-slider__comment {
+  padding: 20px 0;
+  border-bottom: 1px solid $grey84;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}

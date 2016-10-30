@@ -1,0 +1,52 @@
+.modal
+
+    .modal-container.modal-slider.modal-container_wide
+
+        .modal-slider__photo
+
+            .modal-slider.modal-slider__left
+                .i.fa.fa-angle-left.modal__arrow-button
+
+            .modal__image-wrapper.modal-container_middle
+                img(src="assets/img/header_bg.jpg" alt="").modal__image
+
+            .i.fa.fa-times.modal-btn__close.modal-btn__close-slider
+
+            .modal-slider.modal-slider__right
+                .i.fa.fa-angle-right.modal__arrow-button
+
+        .modal-slider__info.modal-container_middle
+            .modal-slider__info-main
+                .modal-slider__author
+                    .modal__image-wrapper.modal__image-preview-wrapper
+                        img(src="assets/img/header_bg.jpg" alt="").modal__image-preview
+                    .modal-slider__person-name.modal-slider__author-name Анна Богданова
+                a.button.button_reset.modal-slider__likes #[.i.fa.fa-heart-o.modal-slider__likes-icon] 16
+            .modal-slider__description
+                .modal-slider__photo-name Путешествие на речном трамвайчике
+                .modal-slider__photo-text Мы отправились в #[span.link #путешествие] два дня назад, но уже сейчас такое ощущение, что мы посмотрели целый новый мир. Далее будет ещё одно описательное предложение. Возможно, оно даже будет с #[span.link тегами].
+            .modal-slider__comments
+                .modal-slider__add-comment
+                    .modal-slider__comments-header Комментарии
+                        .i.fa.fa-angle-down.modal__arrow-button-inline
+                    .modal-slider__comment-pic-wrapper
+                        .modal__image-wrapper.modal__image-preview-wrapper
+                            img(src="assets/img/header_bg.jpg" alt="").modal__image-preview
+                    .modal-slider__comment-right-col
+                        .modal-slider__comment-author.modal-slider__person-name Антон Черепов
+                        input.modal-form__input.modal-slider__comment-input(placeholder="Добавить комментарий")
+                        a.button.button_transparent.modal-slider__btn-add-comment Добавить
+                .modal-slider__comment
+                    .modal-slider__comment-pic-wrapper
+                        .modal__image-wrapper.modal__image-preview-wrapper
+                            img(src="assets/img/header_bg.jpg" alt="").modal__image-preview
+                    .modal-slider__comment-right-col
+                        .modal-slider__comment-author.modal-slider__person-name Виталий Виноградов
+                        .modal-slider__comment-text Душа моя озарена неземной радостью.
+                .modal-slider__comment
+                    .modal-slider__comment-pic-wrapper
+                        .modal__image-wrapper.modal__image-preview-wrapper
+                            img(src="assets/img/header_bg.jpg" alt="").modal__image-preview
+                    .modal-slider__comment-right-col
+                        .modal-slider__comment-author.modal-slider__person-name Татьяна Литвинова
+                        .modal-slider__comment-text Эти чудесные весенние утра.
