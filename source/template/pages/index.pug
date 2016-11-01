@@ -14,35 +14,35 @@ block content
             .welcome_text
               p.welcome_text-p Перед вами сервис, который может вам организовать свои фотографии в альбомы и поделиться ими со всем миром!
           .welcome__card.welcome__card_login
-            form.form.welcome_form
+            form.form.welcome_form#authorization-form
               label.form__label
-                input.form__input(type="email" name="email" id="email" value="" placeholder="Электронная почта")
+                input.form__input(type="email" name="mail" id="mail" value="" placeholder="Электронная почта")
                 span.form__icon
                   i(class="fa fa-envelope" aria-hidden="true")
               label.form__label
                 input.form__input(type="password" name="password" id="password" value="" placeholder="Пароль")
                 span.form__icon
                   i(class="fa fa-lock fa-lg" aria-hidden="true")
-            .welcome__links-wrapper
-              .welcome_form-link-wrapper
-                a(href="#").welcome_form-link#welcome__forget-link Забыли пароль?
-              .welcome__error-mes E-mail или пароль не верен
-              a.button.button_submit.welcome_form-button Войти
-              .welcome_form-text
-                span.welcome_form-span Нет аккаунта?
-                a(href="#").welcome_form-link#welcome__register-link Зарегистрироваться
+              .welcome__links-wrapper
+                .welcome_form-link-wrapper
+                  a(href="#").welcome_form-link#welcome__forget-link Забыли пароль?
+                .welcome__error-mes Не все поля заполнены
+                input(type="submit" value="Войти").button.button_submit.welcome_form-button
+                .welcome_form-text
+                  span.welcome_form-span Нет аккаунта?
+                  a(href="#").welcome_form-link#welcome__register-link Зарегистрироваться
         .flip-card__back-side
           .back-side__registration
             .welcome__intro.welcome__intro_registration
               h1.welcome_h1 Регистрация
             .welcome__card.welcome__card_registration
-              form.form.welcome_form
+              form.form.welcome_form#registration-form
                 label.form__label
-                  input.form__input(type="text" name="user" id="user" value="" placeholder="Имя")
+                  input.form__input(type="text" name="name" id="name" value="" placeholder="Имя")
                   span.form__icon
                     i(class="fa fa-user" aria-hidden="true")
                 label.form__label
-                  input.form__input(type="email" name="email" id="email" value="" placeholder="Электронная почта")
+                  input.form__input(type="email" name="mail" id="mail" value="" placeholder="Электронная почта")
                   span.form__icon
                     i(class="fa fa-envelope" aria-hidden="true")
                 label.form__label
@@ -51,7 +51,8 @@ block content
                     i(class="fa fa-lock fa-lg" aria-hidden="true")
                 .welcome__links-wrapper
                   .welcome_form-text Ваши данные остаются строго конфиденциальны
-                  a(href="#").button.button_submit.welcome_form-button Создать аккаунт
+                  .welcome__error-mes Не все поля заполнены
+                  input(type="submit" value="Создать аккаунт").button.button_submit.welcome_form-button
                   .welcome_form-text
                     span.welcome_form-span Уже зарегистрированы?
                     a(href="#").welcome_form-link.welcome__login-link Войти
@@ -60,17 +61,18 @@ block content
               .welcome__intro
                 h1.welcome_h1 Восстановление пароля
               .welcome__card
-                form.form.welcome_form
+                form.form.welcome_form#recovery-form
                   .welcome__links-wrapper
                     .welcome_form-text
                       span.welcome_text-span Забыли пароль?
                       p.welcome_text-p Ничего страшного, введите свой e-mail, и мы вышлем вам инструкции по восстановлению пароля
                   label.form__label
-                    input.form__input(type="email" name="email" id="email" value="" placeholder="Электронная почта")
+                    input.form__input(type="email" name="mail" id="mail" value="" placeholder="Электронная почта")
                     span.form__icon
                       i(class="fa fa-envelope" aria-hidden="true")
                   .welcome__links-wrapper
-                    a(href="#").button.button_submit.welcome_form-button Восстановить пароль
+                    .welcome__error-mes Не все поля заполнены
+                    input(type="submit" value="Восстановить пароль").button.button_submit.welcome_form-button
                     .welcome_form-text
                       span.welcome_form-span Вспомнили пароль?
                       a(href="#").welcome_form-link.welcome__login-link Войти

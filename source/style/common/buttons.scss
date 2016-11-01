@@ -100,8 +100,14 @@
 .button_light {
   border: none;
 }
-.welcome_form-button {
+.button.welcome_form-button {
   display: block;
   text-align: center;
   margin-top: 16px;
+  margin-left: 0px;
+  width: 100%;
+  border: none;
+  &:focus {
+    outline: none;
+  }
 }
