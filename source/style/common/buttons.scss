@@ -74,6 +74,7 @@
   font: 700 14px Panton;
   display: inline-block;
   text-decoration: none;
+  border: none;
 }
 .button_submit {
   background-color: $btn-inc;
@@ -92,6 +93,7 @@
 .button_transparent {
   border: 1px solid $btn-inc;
   color: $btn-inc;
+  background-color: transparent;
   &:hover {
     background-color: $btn-inc-hover;
     color: #fff;
