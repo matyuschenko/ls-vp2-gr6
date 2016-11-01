@@ -1,4 +1,4 @@
-
+var autorize = require('./backend/autorize');
 var express = require('express');
 var app = express();
 
@@ -23,6 +23,16 @@ app.get('/albums/:id', function (req, res) {
 
 app.get('/', function (req, res) {
     res.render('index');
+});
+
+app.get('/test', function(req, res){
+    var testUser = {
+        name: "Ivan",
+        pass: "111",
+        mail: "test@test.ru"
+    };
+    autorize(testUser.mail, testUser.pass);
+    res.end();
 });
 //Listen port default 9000
 app.listen(9000, function () {
