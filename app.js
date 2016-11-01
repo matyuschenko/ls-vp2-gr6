@@ -1,5 +1,7 @@
 var autorize = require('./backend/autorize');
+var valid = require('validator');
 var express = require('express');
+var db = require('./backend/common/db');
 var app = express();
 
 //
@@ -25,16 +27,64 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
-app.get('/test', function(req, res){
-    var testUser = {
+app.get('/login', function(req, res){
+    // var mail = req.body.mail,
+    //     pass =req.body.pass;
+    var mail = 'test@test.ru',
+        pass = '111';
+    if(valid.isEmail(mail) && valid.isAlphanumeric(pass, 'en-US')){
+        autorize(mail, pass);
+        console.log('Пользователь залогинен');
+    } else {
+        console.log('Вы ввели неверные данные');
+    }
+    res.end();
+});
+
+app.get('/reg', function(req, res){
+    // var user = {
+    //     name: req.body.name,
+    //     pass: req.body.pass,
+    //     mail: req.body.mail
+    // };
+    var user = {
         name: "Ivan",
         pass: "111",
         mail: "test@test.ru"
     };
-    autorize(testUser.mail, testUser.pass);
+    if(valid.isEmail(user.mail)){
+        if(valid.isAlphanumeric(user.name, 'en-US')){
+            if(valid.isAlphanumeric(user.name, 'en-US')){
+                db.users.find({'mail': user.mail}, "mail", function(err, ans){
+                    if(ans.length == 0) {
+                        var user = new db.users(user);
+                        user.save(function (err) {
+                                if (err) {
+                                    console.log(err);
+                                }
+                                console.log('Пользователь добавлен');
+                            }
+                        );
+                    } else {
+                        console.log('Пользователь с этим e-mail уже зарегистрирован');
+                    }
+
+                });
+            }else{
+                console.log('Пароль не соответствует требованиям');
+            }
+
+        }else{
+            console.log('Неправильно введено имя');
+        }
+    } else{
+        console.log('Неправильно введен e-mail');
+    }
+
     res.end();
 });
 //Listen port default 9000
+
 app.listen(9000, function () {
     console.log('Server running port 9000. Paste to you browser http://localhost:9000');
 });
