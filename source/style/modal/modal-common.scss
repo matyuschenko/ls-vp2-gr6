@@ -1,3 +1,19 @@
+.modal {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0,.9);
+}
+
+.modal-container {
+  background-color: #fff;
+}
+
+
 .modal-container_small {
   width: 280px;
 }
@@ -23,10 +39,13 @@
 .modal-btn__close {
   color: $grey66;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .modal__input-row {
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
 }
 
 .modal__input-row_middle-align {
@@ -50,6 +69,7 @@
   resize: none;
   border-radius: 15px;
   border: 1px $grey84 solid;
+  outline: none;
 }
 
 .modal-form__input_small {
