@@ -42,7 +42,6 @@ var registration = (function () {
 		return result;
 	};
 
-	// Универсальная функция
 
 	return {
 		init: init,

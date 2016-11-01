@@ -42,7 +42,6 @@ var recovery = (function () {
 		return result;
 	};
 
-	// Универсальная функция
 
 	return {
 		init: init,

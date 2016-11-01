@@ -42,8 +42,6 @@ var authorization = (function () {
 		return result;
 	};
 
-	// Универсальная функция
-
 	return {
 		init: init,
 	};
