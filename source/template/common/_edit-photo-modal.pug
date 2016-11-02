@@ -1,11 +1,11 @@
-.modal
+.modal.modal-edit-photo
     .modal-container.modal-container_middle
 
         .modal__header
             h4.modal__title Редактировать фотографию
             .i.fa.fa-times.modal-btn__close
 
-        form.form.form__edit-photo
+        form.form.form__edit-photo#form__edit-photo
             .modal__input-row.modal__input-row_middle-align
                 span.modal-form__left-col.modal-form__title  Название
                 input.modal-form__input(placeholder="Домик в лесу")
@@ -16,7 +16,7 @@
 
         .modal-footer
             .modal-footer__buttons-group
-                a.button.button_submit Сохранить
+                input.button.button_submit(form="form__edit-photo" value="Сохранить" type="submit")
                 a.button.button_transparent.button_light Отменить
             .modal-footer__buttons-group
                 a.button.button_reset Удалить

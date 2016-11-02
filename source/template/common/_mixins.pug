@@ -61,3 +61,24 @@ mixin myAlbumItem(category, imgUrl, description, countPhotos)
                 .album-category.album-category__my-albums
                     a.category-name(href="album.html")
                         span.album-name__my-albums= category
+
+mixin singlePhoto(title, category, comments, likes, thumb, user_avatar)
+    .album-item.single-photo(data-title="#{title}" data-likes="#{likes}" data-comments="#{comments}" data-thumb="assets/img/#{thumb}" data-user_avatar="assets/img/#{user_avatar}")
+        .album-item-holder
+            .album-photo
+                a.open-img-popup.js-open-slider(href="#")
+                    .album-mask
+                        i(class="fa fa-search-plus")
+
+                    .album-photo__thumb(style="background-image: url('assets/img/default_avatar.jpg')", alt="")
+                .photo-info
+                    button.photo-info__item
+                        i(class="fa fa-commenting")
+                        span.comment-count= comments
+                    button.photo-info__item
+                        i(class="fa fa-heart")
+                        span.like-count= likes
+            .album-category
+                a.edit-post.js-edit-photo(href="#")
+                    i(class="fa fa-pencil")
+                span.category-name= category
