@@ -41,17 +41,20 @@ app.get('/login', function(req, res){
     res.end();
 });
 
-app.get('/reg', function(req, res){
+app.post('/auth', function(req, res){
     // var user = {
     //     name: req.body.name,
     //     pass: req.body.pass,
     //     mail: req.body.mail
     // };
+
     var user = {
         name: "Ivan",
         pass: "111",
-        mail: "test@test.ru"
+        mail: "test@mail.ru"
     };
+
+    var data=new Array();
     if(valid.isEmail(user.mail)){
         if(valid.isAlphanumeric(user.name, 'en-US')){
             if(valid.isAlphanumeric(user.name, 'en-US')){
@@ -62,25 +65,31 @@ app.get('/reg', function(req, res){
                                 if (err) {
                                     console.log(err);
                                 }
-                                console.log('Пользователь добавлен');
+                                console.log("true");
+                                data["positive"]=true;
                             }
                         );
                     } else {
-                        console.log('Пользователь с этим e-mail уже зарегистрирован');
+                        console.log("Пользователь с этим e-mail уже зарегистрирован");
+                        data["error"] = "Пользователь с этим e-mail уже зарегистрирован";
                     }
 
                 });
             }else{
-                console.log('Пароль не соответствует требованиям');
+                console.log("Пароль не соответствует требованиям");
+
+                data["error"] = 'Пароль не соответствует требованиям';
             }
 
         }else{
             console.log('Неправильно введено имя');
+            data["error"] = 'Неправильно введено имя';
         }
     } else{
-        console.log('Неправильно введен e-mail');
+        console.log("Неправильно введен e-mail");
+        data["error"] = 'Неправильно введен e-mail';
     }
-
+    res.send(data);
     res.end();
 });
 //Listen port default 9000
