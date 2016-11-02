@@ -20,7 +20,6 @@ module.exports = {
         name: String,
         description: String,
         mainPhotoPath: String,
-        backImagePath: String,
         user_ID: String
     }),
     photosSchema: new mongoose.Schema({

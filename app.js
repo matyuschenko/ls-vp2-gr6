@@ -3,7 +3,7 @@ var valid = require('validator');
 var express = require('express');
 var db = require('./backend/common/db');
 var app = express();
-var session = require('express-session')
+var session = require('express-session');
 app.use(session({
     key: 'session_cookie_name',
     secret: 'session_cookie_secret'
@@ -100,6 +100,22 @@ app.post('/auth', function(req, res){
     res.send(data);
     res.end();
 });
+app.post('/useredit', function(req, res){
+   if(req.session.userMail){
+       db.set(req.session.userMail, req.body, 'users');
+   }
+});
+app.post('/albumedit', function(req, res){
+    if(req.session.userMail){
+        db.set(req.session.userMail, req.body, 'albums');
+    }
+});
+app.post('/photoedit', function(req, res){
+    if(req.session.userMail){
+        db.set(req.session.userMail, req.body, 'photo');
+    }
+});
+
 //Listen port default 9000
 
 app.listen(9000, function () {
