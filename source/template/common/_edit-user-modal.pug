@@ -1,15 +1,15 @@
-.modal
+.modal.edit-user
     .modal-container.modal-container_middle
 
         .modal__header
             h4.modal__title Редактировать профиль
             .i.fa.fa-times.modal-btn__close
 
-        form.form.form__edit-user
+        form.form.form__edit-user#form__edit-user
             .modal__form-group.modal__form-group_edit-user
                 .input-group
                     span.modal-form__left-col.modal-form__title   Имя
-                    input.modal-form__input.modal-form__input_small(placeholder="Имя")
+                    input.modal-form__input.modal-form__input_small(required placeholder="Имя")
                     input.modal-form__input.modal-form__input_small(placeholder="Фамилия")
 
                 .modal__input-row
@@ -46,5 +46,5 @@
 
         .modal-footer
             .modal-footer__buttons-group
-                a.button.button_submit Сохранить
+                input.button.button_submit(form="form__edit-user" value="Сохранить" type="submit")
                 a.button.button_transparent.button_light Отменить

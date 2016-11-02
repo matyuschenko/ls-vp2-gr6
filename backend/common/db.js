@@ -8,5 +8,5 @@ module.exports = {
     photos: mongoose.model('photos', schema.photosSchema),
     comments: mongoose.model('comments', schema.commentsSchema),
     tags: mongoose.model('tags', schema.tagsSchema),
-    likes: mongoose.model('likes', schema.likesSchema)
+    likes: mongoose.model('likes', schema.likesSchema),
 };

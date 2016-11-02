@@ -1,18 +1,18 @@
-.modal
+.modal.add-album
     .modal-container.modal-container_middle
 
         .modal__header
             h4.modal__title Добавить альбом
             .i.fa.fa-times.modal-btn__close
 
-        form.form.form__add-album
+        form.form.form__add-album#form__add-album
             .modal__input-row.modal__input-row_middle-align
                 span.modal-form__left-col.modal-form__title  Название
-                input.modal-form__input(placeholder="Название альбома")
+                input.modal-form__input(required placeholder="Название альбома")
 
             .modal__input-row
                 span.modal-form__left-col.modal-form__title  Описание
-                textarea.modal-form__input.modal-form__input_high(placeholder="Как  провёл лето. Чтобы было красиво, описание здесь должно быть на несколько строк. Убедитесь сами!")
+                textarea.modal-form__input.modal-form__input_high(placeholder="Как я провёл лето. Чтобы было красиво, описание здесь должно быть на несколько строк. Убедитесь сами!")
 
             .modal__input-row.modal__input-row_upload
                 span.modal-form__left-col
@@ -23,9 +23,7 @@
 
         .modal-footer
             .modal-footer__buttons-group
-                a.button.button_submit Сохранить
+                input.button.button_submit(form="form__add-album" value="Сохранить" type="submit")
                 a.button.button_transparent.button_light Отменить
             .modal-footer__buttons-group
                 a.button.button_reset Удалить
-
-

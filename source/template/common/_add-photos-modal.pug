@@ -1,15 +1,15 @@
-.modal
+.modal.add-photo
     .modal-container.modal-container_middle
 
         .modal__header
             h4.modal__title Добавить фотографии
             .i.fa.fa-times.modal-btn__close
 
-        form.form.form__add-photo
+        form.form.form__add-photo#form__add-photo
 
             .modal__input-row.modal__input-row_middle-align.add-photo__name
                 span.modal-form__left-col.modal-form__title Название
-                input.modal-form__input(placeholder="Как я провел лето")
+                input.modal-form__input(required placeholder="Как я провел лето")
 
             .form__add-photo_row.drop-photo
 
@@ -22,6 +22,5 @@
 
         .modal-footer
             .modal-footer__buttons-group
-                a.button.button_submit Сохранить
+                input.button.button_submit(form="form__add-photo" value="Сохранить" type="submit")
                 a.button.button_transparent.button_light Отменить
-
