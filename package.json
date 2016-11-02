@@ -18,6 +18,7 @@
   "homepage": "https://github.com/matyuschenko/ls-vp2-gr6#readme",
   "devDependencies": {
     "browser-sync": "^2.17.5",
+    "express-session": "^1.14.2",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "3.1.0",
     "gulp-browserify": "^0.5.1",
