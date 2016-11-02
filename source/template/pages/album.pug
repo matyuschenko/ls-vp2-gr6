@@ -1,17 +1,44 @@
 extends ../template
 include ../common/_mixins
-
-block variables
-    - var title = 'Альбом'
-
 block content
-    include ../common/_header
+    header.header__album
+        .wrapper
+            .header__user-info
+                .user-photo
+                    +avatar
+                .user-info
+                    h4.user-info__name Антон Черепов
+            .header-content
+                h3.my-album-title Лесные прогулки
+                .my-album-desc Фотографии природы леса, енотов и оленей. Как прекрасно сойти на дальней станции и пройтись по полю босиком. И чтобы никто не беспокоил бродить влюбленным в тишину. Запах мёда, лесных оленей и енотов будоражит нутро.
+            .header__buttons
+                .header__buttons-item
+                    a.btn.button_animated.button_edit-info
+                        i(class="fa fa-home")
+                        span На главную
+                .header__buttons-item
+                    a.btn.button_animated.button_edit-info
+                        i(class="fa fa-pencil")
+                        span Редактировать
+        .gray-bg
+            ul.album-general-info
+                li
+                    span.photo-count 18
+                    | Фотографий
+                li
+                    span.like-count 18
+                    | Лайков
+                li
+                    span.comments-count 18
+                    | Комментариев
+
     .changes.changes__album
         form(action="/" method="POST" enctype="multipart/form-data").changes__form
         .changes__top
             .changes__container.changes__container__center
                 .user
                     .user_image
+                        +avatar
                     .user-info__name="Антон Черепов"
                 .changes__data
                     input(type="text" name="username" value="Антон Черепов").input
@@ -24,3 +51,22 @@ block content
             .changes__container
                 button.button.close__header__edit="Отменить"
                 input(type="submit" name="saveheader" value="Сохранить").input__submit
+    section.my-album
+        .my-album_content
+            .my-album__holder
+                a(href="#").btn.button_animated.button_add
+                    svg.svg-add-album
+                        use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#add")
+                    span.add-album-btn-text Добавить
+            ul.my-album-container
+                +singlePhoto("Путешествие на лодке по озеру", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
+                +singlePhoto("Путешествие", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
+                +singlePhoto("Путешествие на лодке по озеру", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
+                +singlePhoto("Путешествие", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
+                +singlePhoto("Путешествие на лодке по озеру", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
+                +singlePhoto("Путешествие", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
+    include ../common/_footer
+
+block variables
+    - var title = 'Альбом'
+
