@@ -3,6 +3,11 @@ var valid = require('validator');
 var express = require('express');
 var db = require('./backend/common/db');
 var app = express();
+var session = require('express-session')
+app.use(session({
+    key: 'session_cookie_name',
+    secret: 'session_cookie_secret'
+}));
 
 //
 app.set('view engine', 'pug');
@@ -19,7 +24,7 @@ app.get('/user/:id', function (req, res) {
     res.render('main');
 });
 
-app.get('/albums/:id', function (req, res) {
+app.get('/albums/:id', loadUser, function (req, res) {
     res.render('album');
 });
 
@@ -67,6 +72,9 @@ app.post('/auth', function(req, res){
                                 }
                                 console.log("true");
                                 data["positive"]=true;
+                            //Добавляем юзера в сессию, если все успешно
+                            req.session.userMail="info@mail.ru";
+                            console.log(req.session.userMail);
                             }
                         );
                     } else {
@@ -97,3 +105,9 @@ app.post('/auth', function(req, res){
 app.listen(9000, function () {
     console.log('Server running port 9000. Paste to you browser http://localhost:9000');
 });
+function loadUser(req, res){
+    console.log("Загрузка юзера");
+    if(req.session.userMail){
+        console.log("Юзер есть в сессии " + req.session.userMail);
+    }
+}
