@@ -8,12 +8,10 @@ var editSocial = (function(){
         },
         showTip = function(elem){
             var block = "<div class='photoTip' style='left:"+setPosition(elem).x+"px;top:"+setPosition(elem).y+"px;'><input class='input' type='text' name='url' value=''><input class='submit' type='submit' value='Сохранить'><button class='cancel'>Отменить</button></div>";
+            $(".photoTip").remove();
             $(".changes__form").append(block);
-        },
-        removeTip = function(elem){
-            $(elem).parent(".photoTip").remove();
-        }
-    return{
+        };
+        return{
         init: function(){
             $(".changes__top .social__link").on("click", function(e){
                 e.preventDefault();

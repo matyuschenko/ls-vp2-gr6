@@ -3,6 +3,7 @@ include ../common/_mixins
 block content
     include ../common/_add-photos-modal.pug
     include ../common/_edit-photo-modal.pug
+    include ../common/_slider-album-modal.pug
     header.header__album
         .wrapper
             .header__user-info
@@ -43,8 +44,8 @@ block content
                         +avatar
                     .user-info__name="Антон Черепов"
                 .changes__data
-                    input(type="text" name="username" value="Антон Черепов").input
-                    textarea(name="userdescription").textarea="Я веб разработчик. Мне 24 года. Люблю путешествия, кодинг, фриланс и активный отдых."
+                    input(type="text" name="username" value="Лесные прогулки").input
+                    textarea(name="userdescription").textarea="Фотографии природы леса, енотов и оленей. Как прекрасно сойти на дальней станции и пройтись по полю босиком. И чтобы никто не беспокоил бродить влюбленным в тишину. Запах мёда, лесных оленей и енотов будоражит нутро."
                 .changes__background
                     i(aria-hidden="true").fa.fa-camera
                     span="Изменить фон"
