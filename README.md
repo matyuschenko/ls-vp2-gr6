@@ -17,3 +17,5 @@ For started backend part you need:
 1. install nodejs in your system (instruction in https://nodejs.org/en/)
 2. instal mongoDB in your system (instruction in https://docs.mongodb.com/manual/)
 3. run 'npm install' to install backend dependencies
+4. run 'node app.js'
+5. install in your browser 'localhost:9000'
