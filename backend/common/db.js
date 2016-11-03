@@ -11,11 +11,14 @@ module.exports = {
     likes: mongoose.model('likes', schema.likesSchema),
     set: function(mail, options, base){
         this[base].findOne({'mail': mail}, function(err, ans){
-            for(var key in options){
-                if(options.hasOwnProperty(key)) {
-                    ans[key] = options[key];
+            if(ans.length !== 0){
+                for(var key in options){
+                    if(options.hasOwnProperty(key)) {
+                        ans[key] = options[key];
+                    }
                 }
-            }
+                return true;
+            } else return false;
         });
     },
     get: function(mail, query, base){
@@ -29,7 +32,8 @@ module.exports = {
             });
             res(query);
         });
-        promise.then();
-
+        return promise.then(function(query){
+            return query;
+        });
     },
 };
