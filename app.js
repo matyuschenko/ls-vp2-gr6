@@ -102,7 +102,7 @@ app.post('/auth', function(req, res){
 });
 app.post('/useredit', function(req, res){
    if(req.session.userMail){
-       db.set(req.session.userMail, req.body, 'users');
+       db.set(req.session.userMail, req.body, 'users'); // set принимает объект
    }
 });
 app.post('/albumedit', function(req, res){
@@ -112,9 +112,20 @@ app.post('/albumedit', function(req, res){
 });
 app.post('/photoedit', function(req, res){
     if(req.session.userMail){
-        db.set(req.session.userMail, req.body, 'photo');
+        db.set(req.session.userMail, req.body, 'photos');
     }
 });
+app.post('/albumcreate', function(req, res){
+    if(req.session.userMail){
+        db.create(req.session.userMail, req.body, 'albums');
+    }
+});
+app.post('/photoadd', function(req, res){
+    if(req.session.userMail){
+        db.create(req.session.userMail, req.body, 'photos'); // create принимает массив объектов
+    }
+});
+
 
 //Listen port default 9000
 
