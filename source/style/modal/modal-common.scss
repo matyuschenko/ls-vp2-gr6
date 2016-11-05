@@ -70,6 +70,12 @@
   border-radius: 15px;
   border: 1px $grey84 solid;
   outline: none;
+  &:focus {
+    border: 1px $btn-inc solid;
+  }
+  &.input-error {
+    border: 1px $btn-dec solid;
+  }
 }
 
 .modal-form__input_small {

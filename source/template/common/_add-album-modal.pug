@@ -18,13 +18,15 @@
                 span.modal-form__left-col
                     .modal__image-wrapper.modal__image-preview-wrapper
                         img(src="assets/img/header_bg.jpg" alt="").modal__image-preview
+                
                 .button.button_transparent.button_load-cover Загрузить обложку
+                    input.modal__input-upload(type="file" name="cover" id="cover")
                 .form__notice.minor-text (файл должен быть размером не более #[span.emphasize 1024 КБ])
             .error-mes Не все поля заполнены
 
         .modal-footer
             .modal-footer__buttons-group
                 input.button.button_submit(form="form__add-album" value="Сохранить" type="submit")
-                a.button.button_transparent.button_light Отменить
+                input.button.button_transparent.button_light(form="form__add-album" value="Отменить" type="reset")
             .modal-footer__buttons-group
                 a.button.button_reset Удалить
