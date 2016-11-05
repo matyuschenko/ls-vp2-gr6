@@ -20,12 +20,14 @@ module.exports = {
         name: String,
         description: String,
         mainPhotoPath: String,
+        albumPath: String,
         user_ID: String
     }),
     photosSchema: new mongoose.Schema({
         name: String,
         description: String,
         date: Date,
+        photoPath: String,
         album_ID: String
     }),
     commentsSchema: new mongoose.Schema({
