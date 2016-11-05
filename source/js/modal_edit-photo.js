@@ -10,14 +10,15 @@ $(window).on('load', function() {
                 })
             },
             sendForm = function () {
-                var form = $('#form__add-album'),
+                var form = $('#form__edit-photo'),
                     inputs = form.find('input, textarea'),
                     res = {};
                 inputs.each(function () {
-                    res[this.type] = this.value;
+                    res[this.name] = this.value;
                 });
-                console.log(res);
-                // отправить ajax запрос
+                $.post('/photoedit', res, function (r) {
+                    console.log(r);
+                })
             };
         return {init: init};
     }());
