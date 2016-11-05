@@ -8,11 +8,11 @@
         form.form.form__add-album#form__add-album
             .modal__input-row.modal__input-row_middle-align
                 span.modal-form__left-col.modal-form__title  Название
-                input.modal-form__input(required placeholder="Название альбома")
+                input.modal-form__input(type="text" placeholder="Название альбома" name="name" id="name")
 
             .modal__input-row
                 span.modal-form__left-col.modal-form__title  Описание
-                textarea.modal-form__input.modal-form__input_high(placeholder="Как я провёл лето. Чтобы было красиво, описание здесь должно быть на несколько строк. Убедитесь сами!")
+                textarea.modal-form__input.modal-form__input_high(placeholder="Как я провёл лето. Чтобы было красиво, описание здесь должно быть на несколько строк. Убедитесь сами!" name="description" id="description")
 
             .modal__input-row.modal__input-row_upload
                 span.modal-form__left-col
@@ -20,6 +20,7 @@
                         img(src="assets/img/header_bg.jpg" alt="").modal__image-preview
                 .button.button_transparent.button_load-cover Загрузить обложку
                 .form__notice.minor-text (файл должен быть размером не более #[span.emphasize 1024 КБ])
+            .error-mes Не все поля заполнены
 
         .modal-footer
             .modal-footer__buttons-group
