@@ -15,7 +15,7 @@ var recovery = (function () {
 		var form = $(this),
 			url = '/recovery',
 			defObj = _ajaxForm(form, url),
-			errorBox = form.find('.welcome__error-mes');
+			errorBox = form.find('.error-mes');
 
 			if (validation.validateForm(form)) {
 				errorBox.hide();
