@@ -228,7 +228,6 @@
 
 .changes{
   position: fixed;
-  display: none;
   left: 0;
   top: 0;
   right: 0;
@@ -236,6 +235,7 @@
   background-color: rgba(white, .9);
   z-index: 2;
   transition: 1s all;
+  display: none;
   &-active{
     z-index:9999;
     display: block;
@@ -295,12 +295,9 @@
     width:478px;
   }
   &__form{
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%, -50%);
     z-index: 9999;
 
   }

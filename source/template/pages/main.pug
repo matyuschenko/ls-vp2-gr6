@@ -30,9 +30,19 @@ block content
                 button(type="submit").search-form__button.fa.fa-search
                 input(type="text" placeholder="Исследовать мир").search-form__input
 
+    section.news-content
+        .new-photos-album
+            h2.album-title Новое в мире
+            .album-container
+                +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "10", "10", "slide-1.jpg", "default_avatar.jpg")
+                +albumItem("Путешествие", "Прогулки по воде", "9", "9", "bg/welcome-bg.jpg", "default_avatar.jpg")
+                +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "8", "8", "no_photo.jpg", "default_avatar.jpg")
+                +albumItem("Путешествие", "Прогулки по воде", "7", "7", "no_photo.jpg", "default_avatar.jpg")
+                +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "6", "6", "no_photo.jpg", "default_avatar.jpg")
+                +albumItem("Путешествие", "Прогулки по воде", "5", "5", "no_photo.jpg", "default_avatar.jpg")
+            a(href="#").button.button_transparent Показать еще
     .changes
-        form(action="/" method="POST" enctype="multipart/form-data").changes__form
-        .changes__top
+        form(action="/" method="POST" enctype="multipart/form-data").changes__top
             .changes__container.changes__container__center
                 .changes__avatar
                     i(aria-hidden="true").fa.fa-camera
@@ -49,20 +59,9 @@ block content
         .changes__bottom
             .changes__container
                 button.button.close__header__edit="Отменить"
-                input(type="submit" name="saveheader" value="Сохранить").input__submit
+                button.button.input__submit Сохранить
 
 
-    section.news-content
-        .new-photos-album
-            h2.album-title Новое в мире
-            .album-container
-                +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "10", "10", "slide-1.jpg", "default_avatar.jpg")
-                +albumItem("Путешествие", "Прогулки по воде", "9", "9", "bg/welcome-bg.jpg", "default_avatar.jpg")
-                +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "8", "8", "no_photo.jpg", "default_avatar.jpg")
-                +albumItem("Путешествие", "Прогулки по воде", "7", "7", "no_photo.jpg", "default_avatar.jpg")
-                +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "6", "6", "no_photo.jpg", "default_avatar.jpg")
-                +albumItem("Путешествие", "Прогулки по воде", "5", "5", "no_photo.jpg", "default_avatar.jpg")
-            a(href="#").button.button_transparent Показать еще
     section.my-album
         .my-album_content
             .my-album__holder
