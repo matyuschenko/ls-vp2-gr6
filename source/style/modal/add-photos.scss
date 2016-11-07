@@ -4,6 +4,7 @@
 }
 
 .drop-photo {
+  position: relative;
   margin: 0 10px 40px 10px;
   min-width: 650px;
   min-height: 320px;
@@ -30,6 +31,10 @@
 
 .drop-photo__text {
   text-align: center;
+}
+
+.file-add-photo {
+  opacity: 0;
 }
 
 .error-notification {

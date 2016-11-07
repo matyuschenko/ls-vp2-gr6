@@ -1,4 +1,4 @@
-.modal.add-photo
+.modal.modal-add-photo(style="display: block;")
     .modal-container.modal-container_middle
 
         .modal__header
@@ -9,9 +9,10 @@
 
             .modal__input-row.modal__input-row_middle-align.add-photo__name
                 span.modal-form__left-col.modal-form__title Название
-                input.modal-form__input(required placeholder="Как я провел лето")
+                input.modal-form__input(required name="name" placeholder="Как я провел лето")
 
             .form__add-photo_row.drop-photo
+                input.modal__input-upload(type="file" name="file-add-photo" id="file-add-photo")
 
                 .drop-photo__wrapper
                     .drop-photo__pic.i.fa.fa-camera.modal-icon__camera
