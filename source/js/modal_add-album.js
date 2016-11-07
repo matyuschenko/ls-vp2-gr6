@@ -2,6 +2,9 @@
 
 var addAlbum = (function () {
 
+	var $input = $('.modal__input-upload');
+		
+
 	var init = function () {
 		_setUpListeners();
 		
@@ -21,7 +24,7 @@ var addAlbum = (function () {
 			defObjFile = _ajaxFileUpload(form, url),
 			errorBox = form.find('.error-mes'),
 			buttonUpload = form.find('.button_load-cover'),
-			fileUpload = form.find('.modal__input-upload');
+			inputFile = form.find('.modal__input-upload');
 			
 			if (validation.validateForm(form)) {
 				errorBox.hide();
@@ -29,7 +32,7 @@ var addAlbum = (function () {
 				errorBox.show();
 			}
 
-			if (fileUpload.val().length === 0) {
+			if (inputFile.val().length === 0) {
 				buttonUpload.removeClass('button_transparent')
 				.addClass('button_reset');
 			} else {
@@ -51,6 +54,10 @@ var addAlbum = (function () {
 	var _ajaxForm = function (form, url) {
 		
 		if (!validation.validateForm(form)) return false;
+		var file = $input.prop('files')[0];
+		if (file.size/1024 > 1024) {
+			return false;
+		}
 		// если false то код ниже не произойдет
 
 		var data = form.serialize(),
@@ -70,17 +77,22 @@ var addAlbum = (function () {
 		// если false то код ниже не произойдет
 
 		var fd = new FormData(),
-			$input = $('.modal__input-upload');
-		fd.append('cover', $input.prop('files')[0]);
+			file = $input.prop('files')[0];
+			
+		fd.append('cover', file);
 
-		var result = $.ajax({
+		if (file.size/1024 > 1024) {
+			alert('Размер фото превышает 1024 Кб. Выберите фото поменьше');
+			return false;
+		} 
+		var	result = $.ajax({
 				url: url,
 				type: 'POST',
 				data: fd,
 				processData: false,
 				contentType: false,
 				
-			});
+		});
 		
 		return result;
 	};
