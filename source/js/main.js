@@ -31,11 +31,11 @@ $(document).ready(function(){
         }
     });
     ////////////////////
-    // BUTTON ADD ALBUMS
+    // BUTTON EDIT ALBUMS
     ////////////////////
     $(".my-albums-edit, .edit-post").on("click", function (e) {
         e.preventDefault();
-        $(".modal-edit-photo").css({display: "flex"});
+        $(".modal-edit-photo, .modal-edit-album").css({display: "flex"});
         document.onmousewheel = function (e) {
             e.preventDefault();
         }
