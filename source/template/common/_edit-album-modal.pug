@@ -1,0 +1,22 @@
+.modal.modal-edit-album
+    .modal-container.modal-container_middle
+
+        .modal__header
+            h4.modal__title Редактировать альбом
+            .i.fa.fa-times.modal-btn__close
+
+        form.form.form__edit-album#form__edit-album
+            .modal__input-row.modal__input-row_middle-align
+                span.modal-form__left-col.modal-form__title  Название
+                input.modal-form__input(type="text" name="name" id="name" placeholder="Название альбома")
+
+            .modal__input-row
+                span.modal-form__left-col.modal-form__title  Описание
+                textarea.modal-form__input.modal-form__input_high(name="description" placeholder="Описание альбома")
+
+        .modal-footer
+            .modal-footer__buttons-group
+                input.button.button_submit(form="form__edit-album" value="Сохранить" type="submit")
+                input.button.button_transparent.button_light(form="form__edit-album" value="Отменить" type="reset")
+            .modal-footer__buttons-group
+                a.button.button_reset Удалить
