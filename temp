@@ -1,0 +1,37 @@
+if(valid.isEmail(user.mail)){
+    if(valid.isAlphanumeric(user.pass, 'en-US')){
+        if(valid.isAlphanumeric(user.name, 'en-US')){
+            db.users.find({'mail': user.mail}, "mail", function(err, ans){
+                if(ans.length == 0) {
+                    var user = new db.users(user);
+                    user.save(function (err) {
+                            if (err) {
+                                console.log(err);
+                            }
+                            console.log("true");
+                            data["positive"]=true;
+                            //Добавляем юзера в сессию, если все успешно
+                            req.session.userMail="info@mail.ru";
+                            console.log(req.session.userMail);
+                        }
+                    );
+                } else {
+                    console.log("Пользователь с этим e-mail уже зарегистрирован");
+                    data["error"] = "Пользователь с этим e-mail уже зарегистрирован";
+                }
+
+            });
+        }else{
+            console.log("Пароль не соответствует требованиям");
+
+            data["error"] = 'Пароль не соответствует требованиям';
+        }
+
+    }else{
+        console.log('Неправильно введено имя');
+        data["error"] = 'Неправильно введено имя';
+    }
+} else{
+    console.log("Неправильно введен e-mail");
+    data["error"] = 'Неправильно введен e-mail';
+}

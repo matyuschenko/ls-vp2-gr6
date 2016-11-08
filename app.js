@@ -1,15 +1,31 @@
-var autorize = require('./backend/autorize');
-var valid = require('validator');
-var express = require('express');
-var db = require('./backend/common/db');
-var app = express();
-var session = require('express-session');
+const autorize = require('./backend/autorize');
+const mongoose = require('mongoose');
+const valid = require('validator');
+const express = require('express');
+const db = require('./backend/common/db');
+const app = express();
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 app.use(session({
-    key: 'session_cookie_name',
-    secret: 'session_cookie_secret'
+    secret: 'secret',
+    key: 'keys',
+    cookie: {
+        path: '/',
+        httpOnly: true,
+        maxAge: null
+    },
+    saveUninitialized: false,
+    resave: false,
+    store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 
-//
+
+
 app.set('view engine', 'pug');
 app.use(express.static('./build'));
 app.set('views', './source/template/pages/');
@@ -32,73 +48,40 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 
-app.get('/login', function(req, res){
-    // var mail = req.body.mail,
-    //     pass =req.body.pass;
-    var mail = 'test@test.ru',
-        pass = '111';
-    if(valid.isEmail(mail) && valid.isAlphanumeric(pass, 'en-US')){
-        autorize(mail, pass);
-        console.log('Пользователь залогинен');
-    } else {
-        console.log('Вы ввели неверные данные');
+
+function isAuth (req, res, next) {
+    if (!req.session.isReg) {
+        return next("Вы не авторизованы");
     }
-    res.end();
-});
+    next();
+}
 
-app.post('/auth', function(req, res){
-    // var user = {
-    //     name: req.body.name,
-    //     pass: req.body.pass,
-    //     mail: req.body.mail
-    // };
-
-    var user = {
-        name: "Ivan",
-        pass: "111",
-        mail: "test@mail.ru"
-    };
-
-    var data=new Array();
-    if(valid.isEmail(user.mail)){
-        if(valid.isAlphanumeric(user.name, 'en-US')){
-            if(valid.isAlphanumeric(user.name, 'en-US')){
-                db.users.find({'mail': user.mail}, "mail", function(err, ans){
-                    if(ans.length == 0) {
-                        var user = new db.users(user);
-                        user.save(function (err) {
-                                if (err) {
-                                    console.log(err);
-                                }
-                                console.log("true");
-                                data["positive"]=true;
-                            //Добавляем юзера в сессию, если все успешно
-                            req.session.userMail="info@mail.ru";
-                            console.log(req.session.userMail);
-                            }
-                        );
+app.post('/auth', function(req, res) {
+    //требуем наличия логина и пароля в теле запроса
+    if (!req.body.mail || !req.body.password) {
+        //если не указан логин или пароль - сообщаем об этом
+        return res.json({status: 'Укажите логин и пароль!'});
+    }
+    if(valid.isEmail(req.body.mail)){
+        if(valid.isAlphanumeric(req.body.password, 'en-US')) {
+            db.users.findOne({'mail': req.body.mail}, "mail pass", function (err, ans) {
+                if (ans.length !== 0) {
+                    if (req.body.mail !== ans.mail || req.body.password !== ans.pass) {
+                        return res.json({status: 'Логин и/или пароль введены неверно!'});
                     } else {
-                        console.log("Пользователь с этим e-mail уже зарегистрирован");
-                        data["error"] = "Пользователь с этим e-mail уже зарегистрирован";
+                        //если найден, то делаем пометку об этом в сессии пользователя, который сделал запрос
+                        req.session.isReg = true;
+                        req.session.mail = req.body.mail;
+                        res.redirect('/main');
+
                     }
-
-                });
-            }else{
-                console.log("Пароль не соответствует требованиям");
-
-                data["error"] = 'Пароль не соответствует требованиям';
-            }
-
-        }else{
-            console.log('Неправильно введено имя');
-            data["error"] = 'Неправильно введено имя';
+                }
+            })
         }
-    } else{
-        console.log("Неправильно введен e-mail");
-        data["error"] = 'Неправильно введен e-mail';
     }
-    res.send(data);
-    res.end();
+});
+app.get('/main', isAuth, function(req, res){
+    res.render('main');
 });
 app.post('/useredit', function(req, res){
    if(req.session.userMail){
