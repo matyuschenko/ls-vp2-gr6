@@ -37,7 +37,12 @@ var authorization = (function () {
 				type: 'POST',
 				dataType: 'json',
 				data: data,
+				success: function(msg, textStatus){
+					console.log(msg+"/"+textStatus);
+
+				}
 			});
+
 
 		return result;
 	};
