@@ -57,9 +57,9 @@ app.post('/auth', function(req, res) {
     }
     if(valid.isEmail(req.body.mail)){
         if(valid.isAlphanumeric(req.body.password, 'en-US')) {
-            db.users.findOne({'mail': req.body.mail}, "mail pass", function (err, ans) {
+            db.users.findOne({'mail': req.body.mail}, "mail password", function (err, ans) {
                 if (ans.length !== 0) {
-                    if (req.body.mail !== ans.mail || req.body.password !== ans.pass) {
+                    if (req.body.mail !== ans.mail || req.body.password !== ans.password) {
                         return res.json({status: 'Логин и/или пароль введены неверно!'});
                     } else {
                         //если найден, то делаем пометку об этом в сессии пользователя, который сделал запрос
