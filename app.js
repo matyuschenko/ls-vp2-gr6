@@ -30,6 +30,7 @@ app.use(session({
 
 app.set('view engine', 'pug');
 app.use(express.static('./build'));
+app.use('/main', express.static('./build'));
 app.set('views', './source/template/pages/');
 
 
@@ -57,7 +58,7 @@ app.post('/auth', function(req, res) {
     }
     if(valid.isEmail(req.body.mail)){
         if(valid.isAlphanumeric(req.body.password, 'en-US')) {
-            db.users.findOne({'mail': req.body.mail}, "mail password", function (err, ans) {
+            db.users.findOne({'mail': req.body.mail}, "mail password _id", function (err, ans) {
                 if (ans.length !== 0) {
                     if (req.body.mail !== ans.mail || req.body.password !== ans.password) {
                         return res.json({status: 'Логин и/или пароль введены неверно!'});
@@ -65,27 +66,28 @@ app.post('/auth', function(req, res) {
                         //если найден, то делаем пометку об этом в сессии пользователя, который сделал запрос
                         req.session.isReg = true;
                         req.session.mail = req.body.mail;
-                        res.redirect('/main');
-
+                        req.session._id = ans._id;
+                        res.redirect('/main/:' + req.session._id);
                     }
                 }
             })
         }
     }
 });
+app.get('/main/:_id', isAuth, function (req, res) {
+    db.users.findOne({'_id': req.session._id}, "name avatarPath vk fb gl tw mail description", function (err, ans) {
+        res.render('main', ans);
+    });
 
-
-app.get('/user/:id', function (req, res) {
-    res.render('main');
 });
 
-app.get('/albums/:id', loadUser, function (req, res) {
+app.get('/albums/:_id', loadUser, function (req, res) {
     res.render('album');
 });
 
-app.get('/main', isAuth, function(req, res){
-    res.render('main');
-});
+// app.get('/main', isAuth, function(req, res){
+//     res.render('main');
+// });
 app.post('/useredit', function(req, res){
    if(req.session.userMail){
        db.set(req.session.userMail, req.body, 'users'); // set принимает объект
@@ -112,17 +114,18 @@ app.post('/photoadd', function(req, res){
     }
 });
 
+//Listen port default 9000
+
+app.listen(9000, function () {
+    console.log('Server running port 9000. Paste to you browser http://localhost:9000');
+});
+
 function isAuth (req, res, next) {
     if (!req.session.isReg) {
         return next("Вы не авторизованы");
     }
     next();
 }
-//Listen port default 9000
-
-app.listen(9000, function () {
-    console.log('Server running port 9000. Paste to you browser http://localhost:9000');
-});
 function loadUser(req, res){
     console.log("Загрузка юзера");
     if(req.session.userMail){
