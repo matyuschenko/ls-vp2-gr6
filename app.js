@@ -1,13 +1,17 @@
-const autorize = require('./backend/autorize');
-const mongoose = require('mongoose');
-const valid = require('validator');
+//Подключение express
 const express = require('express');
-const db = require('./backend/common/db');
 const app = express();
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
+// Подключение сторонних библиотек
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
+const mongoose = require('mongoose');
+const valid = require('validator');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+// Подключение модулей
+const db = require('./backend/common/db');
+const autorize = require('./backend/autorize');
+//Настройка сервера
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
@@ -24,11 +28,11 @@ app.use(session({
     store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 
-
-
 app.set('view engine', 'pug');
 app.use(express.static('./build'));
 app.set('views', './source/template/pages/');
+
+
 //Routing index page
 app.get('/', function (req, res) {
     res.render('index');
@@ -36,26 +40,15 @@ app.get('/', function (req, res) {
 app.get('/logout', function (req, res) {
     res.render('index');
 });
-app.get('/user/:id', function (req, res) {
-    res.render('main');
-});
-
-app.get('/albums/:id', loadUser, function (req, res) {
-    res.render('album');
-});
-
-app.get('/', function (req, res) {
-    res.render('index');
-});
-
-
-function isAuth (req, res, next) {
-    if (!req.session.isReg) {
-        return next("Вы не авторизованы");
+app.post('/registration', (req, res) =>{
+    if(db.create(req.body, 'users')){
+        res.redirect('/main');
+    }else {
+        res.json({status: 'Пользователь с таким e-mail уже зарегистрирован'});
     }
-    next();
-}
+res.end();
 
+})
 app.post('/auth', function(req, res) {
     //требуем наличия логина и пароля в теле запроса
     if (!req.body.mail || !req.body.password) {
@@ -80,6 +73,16 @@ app.post('/auth', function(req, res) {
         }
     }
 });
+
+
+app.get('/user/:id', function (req, res) {
+    res.render('main');
+});
+
+app.get('/albums/:id', loadUser, function (req, res) {
+    res.render('album');
+});
+
 app.get('/main', isAuth, function(req, res){
     res.render('main');
 });
@@ -109,7 +112,12 @@ app.post('/photoadd', function(req, res){
     }
 });
 
-
+function isAuth (req, res, next) {
+    if (!req.session.isReg) {
+        return next("Вы не авторизованы");
+    }
+    next();
+}
 //Listen port default 9000
 
 app.listen(9000, function () {

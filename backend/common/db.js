@@ -10,18 +10,16 @@ module.exports = {
     tags: mongoose.model('tags', schema.tagsSchema),
     likes: mongoose.model('likes', schema.likesSchema),
     create: function(options, base){
-        for(var i = 0; i < options.length; i++){
-            this[base].findOne({'_id': id}, function(err, ans){
-                if(ans.length == 0){
-                    for(var key in options[i]){
-                        if(options[i].hasOwnProperty(key)) {
-                            ans[key] = options[i][key];
-                        }
-                    }
-                    return true;
-                } else return false;
-            });
-        }
+        var that = this;
+        this[base].findOne({'mail': options['mail']}, function(err, ans){
+            if(ans == null){
+                var item = new that[base](options);
+                item.save();
+                return true;
+            } else {
+                return false;
+            }
+        });
     },
     set: function(id, options, base){
         this[base].findOne({'_id': id}, function(err, ans){
