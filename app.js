@@ -30,7 +30,7 @@ app.use(session({
 
 app.set('view engine', 'pug');
 app.use(express.static('./build'));
-app.use('/main', express.static('./build'));
+app.use('/main', express.static(__dirname + '/build'));
 app.set('views', './source/template/pages/');
 
 
@@ -39,11 +39,12 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 app.get('/logout', function (req, res) {
+    req.session.destroy();
     res.render('index');
 });
 app.post('/registration', (req, res) =>{
     if(db.create(req.body, 'users')){
-        res.redirect('/main');
+        res.redirect('/');
     }else {
         res.json({status: 'Пользователь с таким e-mail уже зарегистрирован'});
     }
@@ -67,7 +68,9 @@ app.post('/auth', function(req, res) {
                         req.session.isReg = true;
                         req.session.mail = req.body.mail;
                         req.session._id = ans._id;
-                        res.redirect('/main/:' + req.session._id);
+                        req.session.save(function () {
+                            res.redirect('/main/:' + req.session._id);
+                        });
                     }
                 }
             })
@@ -80,7 +83,9 @@ app.get('/main/:_id', isAuth, function (req, res) {
     });
 
 });
-
+app.get('/test', function(req, res){
+    res.redirect("http://ya.ru");
+});
 app.get('/albums/:_id', loadUser, function (req, res) {
     res.render('album');
 });
@@ -88,9 +93,9 @@ app.get('/albums/:_id', loadUser, function (req, res) {
 // app.get('/main', isAuth, function(req, res){
 //     res.render('main');
 // });
-app.post('/useredit', function(req, res){
-   if(req.session.userMail){
-       db.set(req.session.userMail, req.body, 'users'); // set принимает объект
+app.post('/edituser', function(req, res){
+   if(req.session._id){
+       db.set(req.session._id, req.body, 'users'); // set принимает объект
    }
 });
 app.post('/albumedit', function(req, res){

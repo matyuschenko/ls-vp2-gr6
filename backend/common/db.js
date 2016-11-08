@@ -22,13 +22,12 @@ module.exports = {
         });
     },
     set: function(id, options, base){
-        this[base].findOne({'_id': id}, function(err, ans){
-            if(ans.length !== 0){
+        this[base].findById(id, function(err, ans){
+            if(!err){
                 for(var key in options){
-                    if(options.hasOwnProperty(key)) {
-                        ans[key] = options[key];
-                    }
+                    ans[key] = options[key];
                 }
+                ans.save();
                 return true;
             } else return false;
         });
