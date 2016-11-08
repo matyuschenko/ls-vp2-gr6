@@ -4,17 +4,18 @@ include ../common/_mixins
 block variables
     - var title = 'Пользователь'
 
+
 block content
     include ../common/_add-album-modal.pug
     include ../common/_edit-photo-modal.pug
     header.header
         .header__user-info
             .user-photo
-                +avatar
+                +avatar(avatarPath)
             .user-info
-                h4.user-info__name Антон Черепов
-                .user-info_desc Я веб-разработчик. Мне 24  года. Люблю путешествия, кодинг, фриланс и активный отдых.
-                +socialsBlock
+                h4.user-info__name #{name}
+                .user-info_desc #{description}
+                +socialsBlock(vk, fb, tw, gl, mail)
         .header__buttons
             .header__buttons-item
                 a.btn.button_animated.button_edit-info

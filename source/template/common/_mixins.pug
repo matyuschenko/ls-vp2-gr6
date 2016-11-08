@@ -1,14 +1,14 @@
 //-avatar
-mixin avatar
+mixin avatar(path)
     .user-avatar__img
-        img(src="/assets/img/default_avatar.jpg")
+        img(src=path)
 
-mixin socialsBlock()
+mixin socialsBlock(vk, fb, tw, gl, mail)
     ul.social-links
-        - var socialLinks = { "soc_vk" : "https://vk.com/", "soc_fb" : "https://www.facebook.com/", "soc_twitter" : "https://twitter.com/?lang=en", "soc_google" : "https://plus.google.com/up/follow", "soc_email" : "mailto:mail@gmail.com"}
+        - var socialLinks = { "vk" : vk, "fb" : fb, "tw" : tw, "gl" : gl, "mail" : "mailto:" + mail}
         each link_url, link_name in socialLinks
             li.social__item
-                a(href=link_url, id= "" class="social__link" )
+                a(href=link_url, id= "" class="social__link" target="_blank")
                     svg.svg-social
                         use(xlink:href="assets/img/sprite.svg#" + link_name)
 
