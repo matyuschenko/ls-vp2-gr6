@@ -40,6 +40,10 @@
   color: $grey66;
   font-size: 30px;
   cursor: pointer;
+  font-weight: 100;
+  &:hover {
+    color: $grey84;
+  }
 }
 
 .modal__input-row {
@@ -122,8 +126,13 @@
 
 .modal__arrow-button {
   color: $grey66;
-  font-size: 25px;
+  font-size: 46px;
   margin: 0 20px;
+  font-weight: 900;
+  cursor: pointer;
+  &:hover {
+    color: $grey95;
+  }
 }
 
 .modal__arrow-button-inline {
