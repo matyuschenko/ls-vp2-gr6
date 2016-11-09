@@ -6,6 +6,19 @@ $(document).ready(function(){
     $(".button_edit-info").on("click", function(){
         $(".changes").addClass("changes-active");
     });
+    $(".button_loguot").on("click", function(e){
+        e.preventDefault();
+        console.log(111);
+        $.ajax({
+            url: '/logout',
+            type: 'GET',
+            success: function(data){
+                if (typeof(data.redirect) == 'string') {
+                    window.location = data.redirect;
+                }
+            }
+        });
+    });
     $(".close__header__edit").on("click", function(){
         $(".changes").removeClass("changes-active");
     });
