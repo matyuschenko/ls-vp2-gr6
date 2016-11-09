@@ -9,12 +9,12 @@
       margin-left: 0;
     }
     .social__link {
+      cursor: pointer;
       .svg-social {
         width: 20px;
         height: 20px;
         fill: #fff;
         opacity: .5;
-        transition: all .15s linear;
         &:hover {
           opacity: 1;
         }

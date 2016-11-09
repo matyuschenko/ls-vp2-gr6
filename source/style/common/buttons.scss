@@ -57,6 +57,12 @@
     width: 115px;
   }
 }
+
+.button__home {
+  &:hover {
+    width: 130px;
+  }
+}
 .button_edit-info {
   &:hover {
     width: 155px;

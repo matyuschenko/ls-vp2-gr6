@@ -38,7 +38,7 @@ $(document).ready(function(){
     ////////////////////
     $(".button_add").on("click", function (e) {
         e.preventDefault();
-        $(".add-album, .add-photo").css({display: "flex"});
+        $(".modal-add-album, .modal-add-photo").css({display: "flex"});
         document.onmousewheel = function (e) {
             e.preventDefault();
         }

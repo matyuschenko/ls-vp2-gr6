@@ -12,6 +12,7 @@
     background: linear-gradient(to left, rgba(255, 255, 255, .7) 0%, rgba(5, 5, 5, 0.55) 98%, rgba(0, 0, 0, 0.45) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#a6000000',GradientType=0 );
     z-index: 1;
+    left: 0;
   }
   .header__user-info {
     float: left;
@@ -22,6 +23,8 @@
       width: 22%;
       float: left;
       .user-avatar__img {
+        min-width: 124px;
+        min-height: 124px;
         max-width: 124px;
         max-height: 124px;
         overflow: hidden;
