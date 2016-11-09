@@ -37,8 +37,11 @@ var authorization = (function () {
 				type: 'POST',
 				dataType: 'json',
 				data: data,
-				success: function(msg, textStatus){
-					console.log(msg+"/"+textStatus);
+				success: function(data, msg, textStatus){
+					if (typeof(data.redirect) == 'string') {
+						window.location = data.redirect;
+					}
+
 
 				}
 			});

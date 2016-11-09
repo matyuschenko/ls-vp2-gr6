@@ -57,8 +57,10 @@ app.post('/auth', function(req, res) {
         //если не указан логин или пароль - сообщаем об этом
         return res.json({status: 'Укажите логин и пароль!'});
     }
+
     if(valid.isEmail(req.body.mail)){
         if(valid.isAlphanumeric(req.body.password, 'en-US')) {
+            var newAns = {};
             db.users.findOne({'mail': req.body.mail}, "mail password _id", function (err, ans) {
                 if (ans !== null) {
                     if (req.body.mail !== ans.mail || req.body.password !== ans.password) {
@@ -66,10 +68,9 @@ app.post('/auth', function(req, res) {
                     } else {
                         //если найден, то делаем пометку об этом в сессии пользователя, который сделал запрос
                         req.session.isReg = true;
-                        req.session.mail = req.body.mail;
                         req.session._id = ans._id;
                         req.session.save(function () {
-                            res.redirect('/main/:' + req.session._id);
+                            res.send({redirect: '/main/:' + req.session._id});
                         });
                     }
                 }
