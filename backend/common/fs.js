@@ -5,7 +5,7 @@ var pathVar = './data/';
 var name = 'user2';
 module.exports = {
     createUserPath: function(name){
-        var userPath = path + name;
+        var userPath = pathVar + name;
         try {
             fs.mkdirSync(userPath);
             return userPath;

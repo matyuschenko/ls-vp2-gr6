@@ -39,8 +39,9 @@ app.get('/', function (req, res) {
     res.render('index');
 });
 app.get('/logout', function (req, res) {
-    req.session.destroy();
-    res.render('index');
+    req.session.destroy((err) => {
+        res.send({redirect: '/'});
+    });
 });
 app.post('/registration', (req, res) =>{
     if(db.create(req.body, 'users')){
@@ -68,6 +69,7 @@ app.post('/auth', function(req, res) {
                     } else {
                         //если найден, то делаем пометку об этом в сессии пользователя, который сделал запрос
                         req.session.isReg = true;
+                        req.session.mail = ans.mail;
                         req.session._id = ans._id;
                         req.session.save(function () {
                             res.send({redirect: '/main/:' + req.session._id});
@@ -110,8 +112,8 @@ app.post('/photoedit', function(req, res){
     }
 });
 app.post('/albumcreate', function(req, res){
-    if(req.session.userMail){
-        db.create(req.session.userMail, req.body, 'albums');
+    if(req.session._id){
+        db.create(req.session.mail, req.body, 'albums');
     }
 });
 app.post('/photoadd', function(req, res){
