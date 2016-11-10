@@ -124,9 +124,12 @@ app.post('/albumcreate', function(req, res){
     }
 });
 app.post('/photoadd', function(req, res){
-    if(req.session.userMail){
-        db.create(req.session.userMail, req.body, 'photos'); // create принимает массив объектов
-    }
+    console.log(req.query);
+    console.log(req.body);
+    res.send('success');
+    //if(req.session.userMail){
+    //    db.create(req.session.userMail, req.body, 'photos'); // create принимает массив объектов
+    //}
 });
 
 //Listen port default 9000
