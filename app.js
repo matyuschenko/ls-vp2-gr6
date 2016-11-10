@@ -44,14 +44,21 @@ app.get('/logout', function (req, res) {
     });
 });
 app.post('/registration', (req, res) =>{
-    if(db.create(req.body, 'users')){
-        res.redirect('/');
-    }else {
-        res.json({status: 'Пользователь с таким e-mail уже зарегистрирован'});
-    }
-res.end();
+    db.users.findOne({'mail': req.body.mail}, "_id", function (err, ans) {
+      if (ans !== null) {
+          res.json({status: 'Пользователь с таким e-mail уже зарегистрирован'});
+      } else {
+          db.create(req.body, 'users', function (err) {
+              db.users.findOne({'mail': req.body.mail}, "_id", function (err, ans) {
+                  req.session._id = ans._id;
+                  req.session.isReg = true;
+                  res.send({redirect: '/main/:' + req.session._id});
+              });
+          })
 
-})
+      }
+    })
+});
 app.post('/auth', function(req, res) {
     //требуем наличия логина и пароля в теле запроса
     if (!req.body.mail || !req.body.password) {
