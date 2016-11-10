@@ -37,6 +37,11 @@ var registration = (function () {
 				type: 'POST',
 				dataType: 'json',
 				data: data,
+				success: function(data){
+					if (typeof(data.redirect) == 'string') {
+						window.location = data.redirect;
+					}
+				},
 			});
 
 		return result;

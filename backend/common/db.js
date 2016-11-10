@@ -9,17 +9,11 @@ module.exports = {
     comments: mongoose.model('comments', schema.commentsSchema),
     tags: mongoose.model('tags', schema.tagsSchema),
     likes: mongoose.model('likes', schema.likesSchema),
-    create: function(options, base){
+    create: function(options, base, callback){
         var that = this;
-        this[base].findOne({'mail': options['mail']}, function(err, ans){
-            if(ans == null){
-                var item = new that[base](options);
-                item.save();
-                return true;
-            } else {
-                return false;
-            }
-        });
+        var item = new that[base](options);
+        item.save(callback);
+        return true;
     },
     set: function(id, options, base){
         this[base].findById(id, function(err, ans){
