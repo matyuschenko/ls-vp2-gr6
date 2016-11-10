@@ -3,10 +3,11 @@ var editSocial = (function(){
             var position = {
                 x: $(elem).offset().left - $(".changes__top").offset().left - 140 + ($(elem).width()/2),
                 y: $(elem).offset().top - $(".changes__top").offset().top + $(elem).height()+10
-            }
+            };
             return position;
         },
         showTip = function(elem){
+            console.log(this);
             var block = "<div class='photoTip' style='left:"+setPosition(elem).x+"px;top:"+setPosition(elem).y+"px;'><input class='input' type='text' name='url' value=''><button class='button submit' value='Сохранить'>Сохранить<button class='cancel'>Отменить</button></div>";
             $(".photoTip").remove();
             $(".changes__top").append(block);
