@@ -19,7 +19,7 @@ mixin albumItem(title, category, comments, likes, thumb, user_avatar)
                 a.open-img-popup.js-open-slider(href="#")
                     .album-mask
                         i(class="fa fa-search-plus")
-                    .album-photo__thumb(style="background-image: url('assets/img/default_avatar.jpg')", alt="")
+                    .album-photo__thumb(style="background-image: url('" + thumb + "')", alt="")
             .album-desc
                 .album-desc__user
                     .photo-user-img
@@ -70,7 +70,7 @@ mixin singlePhoto(title, category, comments, likes, thumb, user_avatar)
                     .album-mask
                         i(class="fa fa-search-plus")
 
-                    .album-photo__thumb(style="background-image: url('assets/img/default_avatar.jpg')", alt="")
+                    .album-photo__thumb(style="background-image: url('" + thumb + "')", alt="")
                 .photo-info
                     button.photo-info__item
                         i(class="fa fa-commenting")
