@@ -6,8 +6,9 @@ var editSocial = (function(){
             }
             return position;
         },
-        showTip = function(elem){
-            var block = "<div class='photoTip' style='left:"+setPosition(elem).x+"px;top:"+setPosition(elem).y+"px;'><input class='input' type='text' name='url' value=''><button class='button submit' value='Сохранить'>Сохранить<button class='cancel'>Отменить</button></div>";
+        showTip = function(elem, name){
+            var block = "<form class='photoTip' action='/edituser' method='POST' style='left:"+setPosition(elem).x+"px;top:"+setPosition(elem).y+"px;'>" +
+                "<input class='input' type='text' name=" + name + " value=''><button id='submit' class='button submit' type='button'>Сохранить<button class='cancel' type='button' onclick='cancelSocial'>Отменить</button></form>";
             $(".photoTip").remove();
             $(".changes__top").append(block);
         };
@@ -15,12 +16,15 @@ var editSocial = (function(){
         init: function(){
             $(".changes__top .social__link").on("click", function(e){
                 e.preventDefault();
-                showTip($(this));
+                var $this = $(this),
+                    link = $this.closest('.social__link');
+                showTip($(this), link.attr('id'));
             });
         }
     }
 });
 
+// ДЕЙСТВИЯ ДЛЯ РЕДАКТИРОВАНИЯ СОЦИАЛЬНЫХ ИКОНОК
 
 // ИЗМЕНИТЬ ДАННЫЕ ПОЛЬЗОВАТЕЛЯ (ШАПКА)
 var editUser = (function () {
@@ -31,6 +35,7 @@ var editUser = (function () {
 
     var _setUpListeners = function () {
         $('.input__submit').on('click', _submitForm);
+
     };
 
     var _submitForm = function (e) {
@@ -44,7 +49,6 @@ var editUser = (function () {
             if(defObj){
                 location.reload();
             }
-        console.log(inputs.serialize());
         // что-то будем делать с ответом с сервера defObj
     };
 
@@ -71,3 +75,23 @@ var editUser = (function () {
 
 })();
 editUser.init();
+$(".body").on('click', '.cancel', function(e){
+    $(".photoTip").remove();
+});
+
+$(".body").on('click', '.submit', function(e){
+    e.preventDefault();
+    var form = $('.photoTip'),
+        url = '/edituser',
+        data = form.serialize();
+    $(".photoTip").remove();
+        var result = $.ajax({
+            url: url,
+            type: 'POST',
+            dataType: 'json',
+            data: data,
+            success: function(data){
+
+            }
+        });
+});

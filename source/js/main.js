@@ -22,7 +22,9 @@ $(document).ready(function(){
     $(".close__header__edit").on("click", function(){
         $(".changes").removeClass("changes-active");
     });
-
+    $('#submit').on('click', function(){
+        console.log(111);
+    });
 
     ////////////////////
     // BUTTON CLOSE MODAL WINDOW
