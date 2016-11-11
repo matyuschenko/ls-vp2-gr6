@@ -8,7 +8,7 @@ mixin socialsBlock(vk, fb, tw, gl, mail)
         - var socialLinks = { "vk" : vk, "fb" : fb, "tw" : tw, "gl" : gl, "mail" : "mailto:" + mail}
         each link_url, link_name in socialLinks
             li.social__item
-                a(href=link_url, id= "" class="social__link")
+                a(href=link_url, id=link_name class="social__link")
                     svg.svg-social
                         use(xlink:href="assets/img/sprite.svg#" + link_name)
 
