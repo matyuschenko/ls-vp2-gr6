@@ -21,7 +21,7 @@ app.use(session({
     cookie: {
         path: '/',
         httpOnly: true,
-        maxAge: null
+        maxAge: 300000,
     },
     saveUninitialized: false,
     resave: false,
@@ -48,7 +48,9 @@ app.post('/registration', (req, res) =>{
       if (ans !== null) {
           res.json({status: 'Пользователь с таким e-mail уже зарегистрирован'});
       } else {
-          db.create(req.body, 'users', function (err) {
+          var options = req.body;
+          options.avatarPath = "/data/default/avatar.jpg";
+          db.create(options, 'users', function (err) {
               db.users.findOne({'mail': req.body.mail}, "_id", function (err, ans) {
                   req.session._id = ans._id;
                   req.session.isReg = true;
@@ -106,6 +108,7 @@ app.get('/albums/:_id', loadUser, function (req, res) {
 app.post('/edituser', function(req, res){
    if(req.session._id){
        db.set(req.session._id, req.body, 'users'); // set принимает объект
+       res.end("OK");
    }
 });
 app.post('/albumedit', function(req, res){
@@ -137,7 +140,7 @@ app.listen(9000, function () {
 
 function isAuth (req, res, next) {
     if (!req.session.isReg) {
-        return next("Вы не авторизованы");
+          res.redirect('/');
     }
     next();
 }
