@@ -36,13 +36,15 @@ var editUser = (function () {
 
     var _submitForm = function (e) {
         e.preventDefault();
-
+        $(".changes").removeClass("changes-active");
         var form = $('.changes__top'),
             url = '/edituser',
             inputs = form.find('input, textarea'),
             res = {},
             defObj = _ajaxForm(form, url);
-
+            if(defObj){
+                location.reload();
+            }
         console.log(inputs.serialize());
         // что-то будем делать с ответом с сервера defObj
     };
@@ -55,7 +57,10 @@ var editUser = (function () {
             url: url,
             type: 'POST',
             dataType: 'json',
-            data: data
+            data: data,
+            success: function(data){
+
+            },
         });
 
         return result;
