@@ -16,7 +16,7 @@ block content
                 .my-album-desc Фотографии природы леса, енотов и оленей. Как прекрасно сойти на дальней станции и пройтись по полю босиком. И чтобы никто не беспокоил бродить влюбленным в тишину. Запах мёда, лесных оленей и енотов будоражит нутро.
             .header__buttons
                 .header__buttons-item
-                    a.btn.button_animated.button__home
+                    a.btn.button_animated.button__home(href="/main.html")
                         i(class="fa fa-home")
                         span На главную
                 .header__buttons-item
@@ -26,13 +26,13 @@ block content
         .gray-bg
             ul.album-general-info
                 li
-                    span.photo-count 18
+                    span.photo-count 6
                     | Фотографий
                 li
-                    span.like-count 18
+                    span.like-count 54
                     | Лайков
                 li
-                    span.comments-count 18
+                    span.comments-count 45
                     | Комментариев
 
     .changes.changes__album
@@ -44,8 +44,8 @@ block content
                         +avatar
                     .user-info__name="Антон Черепов"
                 .changes__data
-                    input(type="text" name="username" value="Лесные прогулки").input
-                    textarea(name="userdescription").textarea="Фотографии природы леса, енотов и оленей. Как прекрасно сойти на дальней станции и пройтись по полю босиком. И чтобы никто не беспокоил бродить влюбленным в тишину. Запах мёда, лесных оленей и енотов будоражит нутро."
+                    input(type="text" name="username" value="Милые котики").input
+                    textarea(name="userdescription").textarea="Фотографии котов, кошечек и котят. Выкладывайте своих любимцев!"
                 .changes__background
                     i(aria-hidden="true").fa.fa-camera
                     span="Изменить фон"
@@ -62,12 +62,12 @@ block content
                         use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#add")
                     span.add-album-btn-text Добавить
             ul.my-album-container
-                +singlePhoto("Путешествие на лодке по озеру", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
-                +singlePhoto("Путешествие", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
-                +singlePhoto("Путешествие на лодке по озеру", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
-                +singlePhoto("Путешествие", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
-                +singlePhoto("Путешествие на лодке по озеру", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
-                +singlePhoto("Путешествие", "Прогулки по воде", "10", "10", "no_photo.jpg", "default_avatar.jpg")
+                +singlePhoto("Путешествие на лодке по озеру", "Милые котики", "42", "34", "http://lorempixel.com/300/300/cats/1", "default_avatar.jpg")
+                +singlePhoto("Путешествие", "Милые котики", "7", "9", "http://lorempixel.com/300/300/cats/3", "default_avatar.jpg")
+                +singlePhoto("Путешествие на лодке по озеру", "Милые котики", "15", "13", "http://lorempixel.com/300/300/cats/4", "default_avatar.jpg")
+                +singlePhoto("Путешествие", "Милые котики", "12", "22", "http://lorempixel.com/300/300/cats/5", "default_avatar.jpg")
+                +singlePhoto("Путешествие на лодке по озеру", "Милые котики", "5", "9", "http://lorempixel.com/300/300/cats/6", "default_avatar.jpg")
+                +singlePhoto("Путешествие", "Милые котики", "10", "1", "http://lorempixel.com/300/300/cats/9", "default_avatar.jpg")
     include ../common/_footer
 
 block variables

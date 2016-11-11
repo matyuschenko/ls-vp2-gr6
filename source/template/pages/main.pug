@@ -34,12 +34,12 @@ block content
         .new-photos-album
             h2.album-title Новое в мире
             .album-container
-                +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "10", "10", "slide-1.jpg", "default_avatar.jpg")
-                +albumItem("Путешествие", "Прогулки по воде", "9", "9", "bg/welcome-bg.jpg", "default_avatar.jpg")
-                +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "8", "8", "no_photo.jpg", "default_avatar.jpg")
-                +albumItem("Путешествие", "Прогулки по воде", "7", "7", "no_photo.jpg", "default_avatar.jpg")
-                +albumItem("Путешествие на лодке по озеру", "Прогулки по воде", "6", "6", "no_photo.jpg", "default_avatar.jpg")
-                +albumItem("Путешествие", "Прогулки по воде", "5", "5", "no_photo.jpg", "default_avatar.jpg")
+                +albumItem("Мой любимый!", "Милые котики", "42", "32", "http://lorempixel.com/300/300/cats/1", "default_avatar.jpg")
+                +albumItem("Сиднейская опера", "Здания", "9", "19", "http://lorempixel.com/300/300/city/7", "default_avatar.jpg")
+                +albumItem("В описании рецепт!", "Людимая еда", "18", "7", "http://lorempixel.com/300/300/food/3", "default_avatar.jpg")
+                +albumItem("Что это за город?", "Город", "16", "22", "http://lorempixel.com/300/300/nightlife/4", "default_avatar.jpg")
+                +albumItem("Показ мод 2016", "На подиуме", "7", "6", "http://lorempixel.com/300/300/fashion/5", "default_avatar.jpg")
+                +albumItem("Едем в далекие края!", "Поезда", "15", "5", "http://lorempixel.com/300/300/transport/6", "default_avatar.jpg")
             a(href="#").button.button_transparent Показать еще
     .changes
         form(action="/" method="POST" enctype="multipart/form-data").changes__top
@@ -71,12 +71,12 @@ block content
                         use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/img/sprite.svg#add")
                     span.add-album-btn-text Добавить
             ul.my-album-container
-                +myAlbumItem("Одинокая птица", "./assets/img/default_avatar.jpg", "Лучший альбом",  "15 Фотографий")
-                +myAlbumItem("В последнюю осень", "./assets/img/default_avatar.jpg", "Самый лучший альбом", "10 Фотографий")
-                +myAlbumItem("Путь домой", "./assets/img/default_avatar.jpg", "Хороший альбом", "3 Фотографии")
-                +myAlbumItem("Беспечный ангел", "./assets/img/default_avatar.jpg", "Любимый альбом", "21 Фотография")
-                +myAlbumItem("Музыка для мужика", "./assets/img/default_avatar.jpg", "Текущий альбом", "12 Фотографий")
-                +myAlbumItem("Московские звонки", "./assets/img/default_avatar.jpg", "Почти забытый альбом", "14 Фотографий")
+                //+myAlbumItem("Одинокая птица", "./assets/img/default_avatar.jpg", "Лучший альбом",  "15 Фотографий")
+                //+myAlbumItem("В последнюю осень", "./assets/img/default_avatar.jpg", "Самый лучший альбом", "10 Фотографий")
+                //+myAlbumItem("Путь домой", "./assets/img/default_avatar.jpg", "Хороший альбом", "3 Фотографии")
+                //+myAlbumItem("Беспечный ангел", "./assets/img/default_avatar.jpg", "Любимый альбом", "21 Фотография")
+                //+myAlbumItem("Музыка для мужика", "./assets/img/default_avatar.jpg", "Текущий альбом", "12 Фотографий")
+                //+myAlbumItem("Московские звонки", "./assets/img/default_avatar.jpg", "Почти забытый альбом", "14 Фотографий")
     include ../common/_footer
 
 
